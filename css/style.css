@@ -756,7 +756,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   transition: opacity 0.2s, transform 0.2s;
 }
 .orb-cd.hide {
@@ -766,15 +766,10 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   position: absolute;
 }
 .orb-cd-logo {
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-l));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(232,115,42,0.4);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 .orb-cd-name {
   font-size: 10.5px;
