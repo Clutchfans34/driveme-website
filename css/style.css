@@ -901,11 +901,11 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 }
 
 /* Node photo backgrounds */
-.orb-node[data-svc="fleet"]     { --node-bg: url('https://images.unsplash.com/photo-pmZnZwwn9dM?auto=format&fit=crop&w=400&h=240&q=80'); }
-.orb-node[data-svc="sales"]     { --node-bg: url('https://images.unsplash.com/photo-_fTHxOafgoM?auto=format&fit=crop&w=400&h=240&q=80'); }
-.orb-node[data-svc="import"]    { --node-bg: url('https://images.unsplash.com/photo-xP5an6iXcf0?auto=format&fit=crop&w=400&h=240&q=80'); }
-.orb-node[data-svc="insurance"] { --node-bg: url('https://images.unsplash.com/photo-I6h5O0cet4Q?auto=format&fit=crop&w=400&h=240&q=80'); }
-.orb-node[data-svc="service"]   { --node-bg: url('https://images.unsplash.com/photo-_UhFK7n7Z4Y?auto=format&fit=crop&w=400&h=240&q=80'); }
+.orb-node[data-svc="fleet"]     { --node-bg: url('../images/node-fleet.jpg'); }
+.orb-node[data-svc="sales"]     { --node-bg: url('../images/node-sales.jpg'); }
+.orb-node[data-svc="import"]    { --node-bg: url('../images/node-import.jpg'); }
+.orb-node[data-svc="insurance"] { --node-bg: url('../images/node-insurance.jpg'); }
+.orb-node[data-svc="service"]   { --node-bg: url('../images/node-service.jpg'); }
 
 /* Text shadows for readability on photos */
 .orb-n-lbl   { text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
