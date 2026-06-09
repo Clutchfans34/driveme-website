@@ -122,13 +122,18 @@ p{color:var(--t2);line-height:1.75}
 .nav-links{display:flex;align-items:center;gap:2px}
 .nav-link{
   padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;
-  color:var(--t2);transition:color var(--tr),background var(--tr);white-space:nowrap;
+  color:var(--t2);transition:color 0.2s,background 0.2s,box-shadow 0.2s;
+  white-space:nowrap;
 }
-.nav-link:hover{color:var(--text);background:rgba(255,255,255,0.04)}
-.nav-link.active{color:var(--accent)}
-.nav-link.active::after{
-  content:'';display:block;height:2px;border-radius:2px;
-  background:var(--accent);margin-top:-2px;
+.nav-link:hover{
+  color:var(--text);
+  background:rgba(232,115,42,0.08);
+}
+.nav-link.active{
+  color:var(--accent);
+  font-weight:700;
+  background:rgba(232,115,42,0.10);
+  box-shadow:0 0 10px rgba(232,115,42,0.35), 0 0 22px rgba(232,115,42,0.18), inset 0 0 8px rgba(232,115,42,0.06);
 }
 
 .nav-cta{display:flex;align-items:center;gap:12px}
