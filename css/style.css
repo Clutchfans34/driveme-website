@@ -251,12 +251,12 @@ p{color:var(--t2);line-height:1.75}
   bottom:-100px;right:-100px;pointer-events:none;
 }
 .hero-inner{
-  display:grid;grid-template-columns:1fr 680px;
+  display:grid;grid-template-columns:minmax(0,1fr) 680px;
   gap:48px;align-items:center;width:100%;
 }
-.hero-body{max-width:520px}
+.hero-body{min-width:0}
 .hero-eyebrow{margin-bottom:24px}
-.hero-h{margin-bottom:20px}
+.hero-h{margin-bottom:20px;font-size:clamp(2rem,3.2vw,3.4rem)}
 .hero-h span{color:var(--accent)}
 .hero-desc{font-size:1.1rem;max-width:440px;margin-bottom:36px;color:var(--t2)}
 .hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
