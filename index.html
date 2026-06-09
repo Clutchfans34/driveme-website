@@ -64,11 +64,13 @@
 </div>
 
 <!-- ── HERO ── -->
-<section class="hero" style="padding-bottom:80px">
+<section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow-r"></div>
   <div class="wrap">
     <div class="hero-inner">
+
+      <!-- Compact header above orbit -->
       <div class="hero-body">
         <div class="hero-eyebrow">
           <div class="label">
@@ -78,11 +80,10 @@
         </div>
         <h1 class="hero-h">
           Повний цикл<br>
-          автомобільних<br>
-          <span>послуг</span>
+          <span>автомобільних послуг</span>
         </h1>
         <p class="hero-desc">
-          Від оренди авто для таксі до імпорту зі США та Кореї — п'ять напрямків під одним дахом. Ведемо вас на кожному кроці.
+          Від оренди авто для таксі до імпорту зі США та Кореї — п'ять напрямків під одним дахом.
         </p>
         <div class="hero-btns">
           <a href="#services" class="btn-p btn-lg">
@@ -91,27 +92,9 @@
           </a>
           <a href="#contact" class="btn-g btn-lg">Зв'язатися</a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-val"><span data-target="344" data-suffix="+">0+</span></div>
-            <div class="hero-stat-lbl">Автомобілів</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-val"><span data-target="7" data-suffix="">0</span></div>
-            <div class="hero-stat-lbl">Міст</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-val"><span data-target="5" data-suffix="">0</span></div>
-            <div class="hero-stat-lbl">Напрямків</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-val"><span data-target="3" data-suffix=" р">0</span></div>
-            <div class="hero-stat-lbl">На ринку</div>
-          </div>
-        </div>
       </div>
 
-      <!-- Orbital Visual -->
+      <!-- Orbital Visual — main hero element -->
       <div class="hero-visual">
         <div class="orb-sys" id="orbSys">
 
@@ -191,9 +174,9 @@
           </div>
 
           <!-- ── 5 Service Nodes ── -->
-          <!-- Fleet: top center (260,70) → center-44 = left=216, top=26 -->
+          <!-- Fleet: (260,70)×1.346=(350,94) → left=297, top=41 -->
           <a class="orb-node" data-svc="fleet" href="pages/fleet.html"
-             style="left:216px;top:26px;--nc:#E8732A;--nd:0s">
+             style="left:297px;top:41px;--nc:#E8732A;--nd:0s">
             <div class="orb-n-ico" style="color:#E8732A">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/>
@@ -203,9 +186,9 @@
             <div class="orb-n-lbl">Автопарк</div>
           </a>
 
-          <!-- Sales: top-right (441,201) → left=397, top=157 -->
+          <!-- Sales: (441,201)×1.346=(594,271) → left=541, top=218 -->
           <a class="orb-node" data-svc="sales" href="pages/sales.html"
-             style="left:397px;top:157px;--nc:#5B9FE8;--nd:0.4s">
+             style="left:541px;top:218px;--nc:#5B9FE8;--nd:0.4s">
             <div class="orb-n-ico" style="color:#5B9FE8">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
@@ -215,9 +198,9 @@
             <div class="orb-n-lbl">Продаж авто</div>
           </a>
 
-          <!-- Import: bottom-right (372,414) → left=328, top=370 -->
+          <!-- Import: (372,414)×1.346=(501,557) → left=448, top=504 -->
           <a class="orb-node" data-svc="import" href="pages/import.html"
-             style="left:328px;top:370px;--nc:#E8B42A;--nd:0.8s">
+             style="left:448px;top:504px;--nc:#E8B42A;--nd:0.8s">
             <div class="orb-n-ico" style="color:#E8B42A">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -228,9 +211,9 @@
             <div class="orb-n-lbl">Імпорт авто</div>
           </a>
 
-          <!-- Insurance: bottom-left (148,414) → left=104, top=370 -->
+          <!-- Insurance: (148,414)×1.346=(199,557) → left=146, top=504 -->
           <a class="orb-node" data-svc="insurance" href="pages/insurance.html"
-             style="left:104px;top:370px;--nc:#2CC88A;--nd:1.2s">
+             style="left:146px;top:504px;--nc:#2CC88A;--nd:1.2s">
             <div class="orb-n-ico" style="color:#2CC88A">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -239,9 +222,9 @@
             <div class="orb-n-lbl">Страхування</div>
           </a>
 
-          <!-- Service: top-left (79,201) → left=35, top=157 -->
+          <!-- Service: (79,201)×1.346=(106,271) → left=53, top=218 -->
           <a class="orb-node" data-svc="service" href="pages/service.html"
-             style="left:35px;top:157px;--nc:#9B78E0;--nd:1.6s">
+             style="left:53px;top:218px;--nc:#9B78E0;--nd:1.6s">
             <div class="orb-n-ico" style="color:#9B78E0">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>

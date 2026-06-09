@@ -241,9 +241,9 @@ p{color:var(--t2);line-height:1.75}
   padding-top:var(--nav-h);position:relative;overflow:hidden;
 }
 .hero-glow{
-  position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,115,42,0.07) 0%,transparent 70%);
-  top:-200px;left:-200px;pointer-events:none;
+  position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,115,42,0.09) 0%,transparent 65%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
 }
 .hero-glow-r{
   position:absolute;width:500px;height:500px;border-radius:50%;
@@ -251,28 +251,27 @@ p{color:var(--t2);line-height:1.75}
   bottom:-100px;right:-100px;pointer-events:none;
 }
 .hero-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;width:100%;
+  display:flex;flex-direction:column;align-items:center;
+  gap:44px;width:100%;text-align:center;
+  padding:32px 0 56px;
 }
-.hero-eyebrow{margin-bottom:24px}
-.hero-h{margin-bottom:24px}
+.hero-body{max-width:700px;width:100%}
+.hero-eyebrow{margin-bottom:20px;display:flex;justify-content:center}
+.hero-h{margin-bottom:18px}
 .hero-h span{color:var(--accent)}
-.hero-desc{font-size:1.15rem;max-width:480px;margin-bottom:36px}
-.hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-desc{font-size:1.1rem;max-width:520px;margin:0 auto 32px;color:var(--t2)}
+.hero-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 .hero-stats{
-  display:flex;gap:32px;margin-top:48px;
-  padding-top:32px;border-top:1px solid var(--border);
+  display:flex;gap:40px;margin-top:40px;justify-content:center;
+  padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap;
 }
 .hero-stat-val{font-size:1.8rem;font-weight:900;letter-spacing:-.03em;color:var(--text);margin-bottom:2px}
 .hero-stat-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
 
-/* Hero visual — SVG car wireframe */
+/* Hero visual — orbital system */
 .hero-visual{
   display:flex;justify-content:center;align-items:center;
-  position:relative;
-}
-.hero-vis-wrap{
-  position:relative;width:100%;max-width:520px;
+  position:relative;width:100%;
 }
 .car-svg{width:100%;height:auto;opacity:0.9}
 .hero-badge{
@@ -612,8 +611,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 
 .orb-sys {
   position: relative;
-  width: 520px;
-  height: 520px;
+  width: 700px;
+  height: 700px;
   flex-shrink: 0;
 }
 
@@ -690,8 +689,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 116px;
-  height: 116px;
+  width: 156px;
+  height: 156px;
   border-radius: 50%;
   background: var(--col);
   border: 1px solid var(--border2);
@@ -791,8 +790,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 /* ── Service Nodes ── */
 .orb-node {
   position: absolute;
-  width: 88px;
-  height: 88px;
+  width: 106px;
+  height: 106px;
   border-radius: 50%;
   background: var(--col);
   border: 1px solid rgba(255,255,255,0.10);
@@ -800,7 +799,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 7px;
   text-decoration: none;
   z-index: 4;
   cursor: pointer;
@@ -822,7 +821,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 }
 .orb-n-ico { line-height: 0; flex-shrink: 0; }
 .orb-n-lbl {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--t2);
   text-align: center;
@@ -839,7 +838,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
-  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-inner{gap:32px}
   .hero-visual{display:none}
   .cities-grid{grid-template-columns:repeat(4,1fr)}
   .services-grid{grid-template-columns:repeat(2,1fr)}
