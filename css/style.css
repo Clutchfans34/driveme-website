@@ -832,10 +832,11 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   width: 190px;
   height: 115px;
   border-radius: 22px;
-  background-color: rgba(15,12,10,0.92);
-  background-image: linear-gradient(rgba(6,5,4,0.62), rgba(6,5,4,0.62)), var(--node-bg, none);
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(22,17,12,0.72);
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 14px 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.10);
   display: flex;
   flex-direction: column;
@@ -857,7 +858,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 .orb-node:hover,
 .orb-node.active {
   border-color: var(--nc);
-  background-image: linear-gradient(rgba(6,5,4,0.35), rgba(6,5,4,0.35)), var(--node-bg, none);
+  background-color: rgba(30,24,18,0.85);
   box-shadow: 0 0 0 2px var(--nc), 0 0 40px rgba(232,115,42,0.2), 0 16px 48px rgba(0,0,0,0.6);
   animation-play-state: paused;
   transform: translateY(0) scale(1.08) !important;
