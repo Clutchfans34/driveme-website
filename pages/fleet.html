@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Автопарк — DRIVE ME</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/main.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="nav-logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div>
+      <span class="nav-logo-name">DRIVE<em>&nbsp;ME</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="fleet.html" class="nav-link active">Автопарк</a></li>
+      <li><a href="sales.html" class="nav-link">Продаж авто</a></li>
+      <li><a href="import.html" class="nav-link">Імпорт авто</a></li>
+      <li><a href="insurance.html" class="nav-link">Страхування</a></li>
+      <li><a href="service.html" class="nav-link">Автосервіс</a></li>
+    </ul>
+    <div class="nav-cta"><a href="tel:+380000000000" class="nav-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.96-1.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 15z"/></svg>+38 (0XX) XXX-XX-XX</a></div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav">
+  <a href="fleet.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></span>Автопарк</a>
+  <a href="sales.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>Продаж авто</a>
+  <a href="import.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Імпорт авто</a>
+  <a href="insurance.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Страхування</a>
+  <a href="service.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Автосервіс</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background:radial-gradient(ellipse 60% 80% at 0% 50%,rgba(232,115,42,0.07) 0%,transparent 70%)"></div>
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="../index.html">DRIVE ME</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bc-sep"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="bc-cur">Автопарк</span>
+    </div>
+    <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Автопарк</div>
+    <h1>Заробляй в таксі<br><span style="color:var(--accent)">на нашому авто</span></h1>
+    <p>Оренда авто для Uklon, Bolt та інших агрегаторів. 344 перевірені авто, 7 міст, ТО безкоштовно, підтримка 24/7.</p>
+    <div class="page-hero-btns">
+      <a href="#apply" class="btn-p btn-lg">Стати водієм<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#cars" class="btn-g btn-lg">Переглянути авто</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="stats-row reveal">
+      <div class="stat-item"><div class="stat-num"><span data-target="344" data-suffix="+">0+</span></div><div class="stat-lbl">Авто у флоті</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-num"><span data-target="7">0</span></div><div class="stat-lbl">Міст</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-num"><span data-target="79" data-suffix="%">0%</span></div><div class="stat-lbl">Середнє завантаження</div></div>
+      <div class="stat-div"></div>
+      <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-lbl">Підтримка водіїв</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CARS -->
+<section id="cars">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="label"><div class="label-dot"></div>Флот</div>
+      <h2>Три моделі для<br>різних цілей</h2>
+      <p>Обираємо надійні та економічні авто, що максимізують ваш дохід.</p>
+    </div>
+    <div class="services-grid">
+      <div class="card card-accent-l reveal" style="padding:28px 24px">
+        <div class="ico-box ico-orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div>
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+          <h3>Renault Logan</h3>
+          <span class="chip chip-orange">Економ</span>
+        </div>
+        <p style="font-size:13px;margin-bottom:20px">Найпопулярніша модель флоту. Економічна і надійна — ідеальна для міських поїздок.</p>
+        <div class="fv-kpi-grid" style="margin-bottom:16px">
+          <div class="fv-kpi accent"><div class="fv-val">147</div><div class="fv-lbl">авто</div></div>
+          <div class="fv-kpi accent"><div class="fv-val">6–7л</div><div class="fv-lbl">на 100км</div></div>
+          <div class="fv-kpi accent"><div class="fv-val">2200</div><div class="fv-lbl">грн/тиж</div></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="chip chip-orange">Автомат / механіка</span>
+          <span class="chip chip-orange">Кондиціонер</span>
+        </div>
+      </div>
+
+      <div class="card card-blue reveal rev-d1" style="padding:28px 24px">
+        <div class="ico-box ico-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div>
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+          <h3>Hyundai Sonata LF</h3>
+          <span class="chip chip-blue">Комфорт</span>
+        </div>
+        <p style="font-size:13px;margin-bottom:20px">Бізнес-клас для преміальних тарифів. Просторий, потужний, представницький.</p>
+        <div class="fv-kpi-grid" style="margin-bottom:16px">
+          <div class="fv-kpi blue"><div class="fv-val" style="color:var(--blue)">98</div><div class="fv-lbl">авто</div></div>
+          <div class="fv-kpi blue"><div class="fv-val" style="color:var(--blue)">8–9л</div><div class="fv-lbl">на 100км</div></div>
+          <div class="fv-kpi blue"><div class="fv-val" style="color:var(--blue)">3200</div><div class="fv-lbl">грн/тиж</div></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="chip chip-blue">Автомат</span>
+          <span class="chip chip-blue">Клімат-контроль</span>
+        </div>
+      </div>
+
+      <div class="card card-yellow reveal rev-d2" style="padding:28px 24px">
+        <div class="ico-box ico-yellow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div>
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px">
+          <h3>Chevrolet Cobalt</h3>
+          <span class="chip chip-yellow">Стандарт</span>
+        </div>
+        <p style="font-size:13px;margin-bottom:20px">Надійний седан для стабільного заробітку. Простий у обслуговуванні, доступний у всіх 7 містах.</p>
+        <div class="fv-kpi-grid" style="margin-bottom:16px">
+          <div class="fv-kpi yellow"><div class="fv-val" style="color:var(--yellow)">68</div><div class="fv-lbl">авто</div></div>
+          <div class="fv-kpi yellow"><div class="fv-val" style="color:var(--yellow)">7–8л</div><div class="fv-lbl">на 100км</div></div>
+          <div class="fv-kpi yellow"><div class="fv-val" style="color:var(--yellow)">2500</div><div class="fv-lbl">грн/тиж</div></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="chip chip-yellow">Механіка</span>
+          <span class="chip chip-yellow">Кондиціонер</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section style="background:var(--col);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="feature-block reveal">
+      <div class="feature-body">
+        <div class="label"><div class="label-dot"></div>Умови оренди</div>
+        <h2 style="margin-top:16px">Прозорі умови,<br>без сюрпризів</h2>
+        <p style="margin:16px 0 28px">Офіційний договір. Кожна умова закріплена документально. Жодних прихованих платежів.</p>
+        <div class="feature-list">
+          <div class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt"><strong>ТО безкоштовно</strong> — планове обслуговування за рахунок Drive Me</div></div>
+          <div class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt"><strong>КАСКО страхування</strong> — авто застраховане, у разі ДТП підмінне авто</div></div>
+          <div class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt"><strong>Підключення до агрегаторів</strong> — допоможемо з Uklon, Bolt та іншими</div></div>
+          <div class="feature-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt"><strong>Підтримка 24/7</strong> — менеджер завжди на зв'язку</div></div>
+        </div>
+      </div>
+      <div class="feature-vis reveal rev-d2">
+        <div class="feature-vis-title" style="margin-bottom:12px">Орієнтовний дохід водія</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Авто</th><th>Оренда/тиж</th><th>Дохід/міс</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Logan</strong></td><td style="color:var(--accent)">від 2 200 грн</td><td style="color:var(--green)">40–60 тис.</td></tr>
+              <tr><td><strong>Cobalt</strong></td><td style="color:var(--accent)">від 2 500 грн</td><td style="color:var(--green)">45–65 тис.</td></tr>
+              <tr><td><strong>Sonata LF</strong></td><td style="color:var(--accent)">від 3 200 грн</td><td style="color:var(--green)">60–90 тис.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:11px;margin-top:10px;color:var(--t3)">* Залежить від міста, кількості годин та активності агрегатора</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO JOIN -->
+<section id="apply">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="label" style="justify-content:center"><div class="label-dot"></div>Як стати водієм</div>
+      <h2 style="margin-top:14px">4 кроки до першої поїздки</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px" class="reveal">
+      <div class="card" style="text-align:center;padding:28px 20px">
+        <div class="step-n" style="margin:0 auto 16px">1</div>
+        <h4 style="margin-bottom:8px">Залишіть заявку</h4>
+        <p style="font-size:13px">Зателефонуйте або заповніть форму нижче</p>
+      </div>
+      <div class="card" style="text-align:center;padding:28px 20px">
+        <div class="step-n" style="margin:0 auto 16px">2</div>
+        <h4 style="margin-bottom:8px">Перевірка документів</h4>
+        <p style="font-size:13px">Паспорт, права кат. B, стаж 2+ роки</p>
+      </div>
+      <div class="card" style="text-align:center;padding:28px 20px">
+        <div class="step-n" style="margin:0 auto 16px">3</div>
+        <h4 style="margin-bottom:8px">Підписання договору</h4>
+        <p style="font-size:13px">Офіційний договір оренди, прозорі умови</p>
+      </div>
+      <div class="card" style="text-align:center;padding:28px 20px">
+        <div class="step-n" style="margin:0 auto 16px">4</div>
+        <h4 style="margin-bottom:8px">Отримуєте авто</h4>
+        <p style="font-size:13px">Підключення до агрегатора і перша поїздка</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div style="max-width:620px;margin:0 auto" class="reveal">
+      <div class="contact-form-box">
+        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Заявка водія</div>
+        <form class="js-form">
+          <div class="form-2col">
+            <div class="form-group"><label class="form-label">Ім'я та прізвище</label><input type="text" class="form-ctrl" placeholder="Іван Петренко" required></div>
+            <div class="form-group"><label class="form-label">Телефон</label><input type="tel" class="form-ctrl" placeholder="+38 (0XX) XXX-XX-XX" required></div>
+          </div>
+          <div class="form-2col">
+            <div class="form-group"><label class="form-label">Місто</label>
+              <select class="form-ctrl"><option>Київ</option><option>Львів</option><option>Запоріжжя</option><option>Дніпро</option><option>Одеса</option><option>Вінниця</option><option>Кривий Ріг</option></select>
+            </div>
+            <div class="form-group"><label class="form-label">Бажаний автомобіль</label>
+              <select class="form-ctrl"><option>Logan (Економ)</option><option>Cobalt (Стандарт)</option><option>Sonata LF (Комфорт)</option></select>
+            </div>
+          </div>
+          <button type="submit" class="btn-p btn-lg" style="width:100%;justify-content:center">Надіслати заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div><span class="nav-logo-name">DRIVE<em>&nbsp;ME</em></span></a>
+        <p>Повний цикл автомобільних послуг в Україні.</p>
+      </div>
+      <div class="footer-col"><h5>Послуги</h5><ul><li><a href="fleet.html">Автопарк</a></li><li><a href="sales.html">Продаж авто</a></li><li><a href="import.html">Імпорт авто</a></li><li><a href="insurance.html">Страхування</a></li><li><a href="service.html">Автосервіс</a></li></ul></div>
+      <div class="footer-col"><h5>Компанія</h5><ul><li><a href="../index.html">Головна</a></li><li><a href="#">Про нас</a></li><li><a href="#">Вакансії</a></li></ul></div>
+      <div class="footer-col"><h5>Контакти</h5><ul><li><a href="tel:+380000000000">+38 (0XX) XXX-XX-XX</a></li><li><a href="mailto:info@driveme.ua">info@driveme.ua</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 DRIVE ME. Всі права захищені.</p><span>7 міст · 344+ авто</span></div>
+  </div>
+</footer>
+</body>
+</html>

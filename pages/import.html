@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Імпорт авто зі США та Кореї — DRIVE ME</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/main.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div><span class="nav-logo-name">DRIVE<em>&nbsp;ME</em></span></a>
+    <ul class="nav-links"><li><a href="fleet.html" class="nav-link">Автопарк</a></li><li><a href="sales.html" class="nav-link">Продаж авто</a></li><li><a href="import.html" class="nav-link active">Імпорт авто</a></li><li><a href="insurance.html" class="nav-link">Страхування</a></li><li><a href="service.html" class="nav-link">Автосервіс</a></li></ul>
+    <div class="nav-cta"><a href="tel:+380000000000" class="nav-phone"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.07 6.07l.96-1.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 15z"/></svg>+38 (0XX) XXX-XX-XX</a></div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav"><a href="fleet.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></span>Автопарк</a><a href="sales.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>Продаж авто</a><a href="import.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>Імпорт авто</a><a href="insurance.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Страхування</a><a href="service.html" class="mob-nav-link"><span class="mob-nav-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>Автосервіс</a></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background:radial-gradient(ellipse 60% 80% at 0% 50%,rgba(232,180,42,0.06) 0%,transparent 70%)"></div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../index.html">DRIVE ME</a><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bc-sep"><polyline points="9 18 15 12 9 6"/></svg><span class="bc-cur">Імпорт авто</span></div>
+    <div class="label" style="margin-bottom:20px;color:var(--yellow)"><div class="label-dot" style="background:var(--yellow)"></div>Імпорт авто</div>
+    <h1>США та Корея —<br><span style="color:var(--yellow)">під ключ в Україні</span></h1>
+    <p>Підбираємо на аукціонах Copart, IAAI та корейських майданчиках. Доставка, митне оформлення, постановка на облік — повний цикл.</p>
+    <div class="page-hero-btns">
+      <a href="#order" class="btn-p btn-lg" style="background:linear-gradient(135deg,var(--yellow),#FFD000);color:#1a1000">Замовити авто<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#how" class="btn-g btn-lg">Як це працює</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="wrap"><div class="stats-row reveal">
+    <div class="stat-item"><div style="font-size:1.6rem;font-weight:900;color:var(--yellow);margin-bottom:6px">США 🇺🇸</div><div class="stat-lbl">Copart · IAAI · Manheim</div></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><div style="font-size:1.6rem;font-weight:900;color:var(--yellow);margin-bottom:6px">Корея 🇰🇷</div><div class="stat-lbl">Encar · K Car · AJ</div></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><div class="stat-num" style="color:var(--yellow)"><span data-target="6" data-suffix=" тиж">0</span></div><div class="stat-lbl">Середній термін</div></div>
+    <div class="stat-div"></div>
+    <div class="stat-item"><div class="stat-num" style="color:var(--yellow)">−40%</div><div class="stat-lbl">Економія від ринку</div></div>
+  </div></div>
+</div>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="label" style="color:var(--yellow)"><div class="label-dot" style="background:var(--yellow)"></div>Чому це вигідно</div>
+      <h2>Заощадьте до 40%<br>порівняно з ринком UA</h2>
+    </div>
+    <div class="services-grid">
+      <div class="card card-yellow reveal" style="padding:28px 24px">
+        <div class="ico-box ico-yellow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3 style="margin-bottom:12px">Авто зі США 🇺🇸</h3>
+        <p style="font-size:13px;margin-bottom:16px">Copart та IAAI — найбільші аукціони світу. Величезний вибір. Перевірка по Carfax і AutoCheck.</p>
+        <div class="feature-list" style="gap:6px">
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Морська доставка 3–5 тижнів</div></div>
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Економія 30–50% vs ринок UA</div></div>
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Авто після ДТП та чисті</div></div>
+        </div>
+      </div>
+      <div class="card card-yellow reveal rev-d1" style="padding:28px 24px">
+        <div class="ico-box ico-yellow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3 style="margin-bottom:12px">Авто з Кореї 🇰🇷</h3>
+        <p style="font-size:13px;margin-bottom:16px">Hyundai, Kia, Genesis — відмінна якість, здебільшого без ДТП, з повною сервісною книжкою.</p>
+        <div class="feature-list" style="gap:6px">
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Переважно без ДТП</div></div>
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Доставка 4–6 тижнів</div></div>
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Sonata, Tucson, K5, Genesis</div></div>
+        </div>
+      </div>
+      <div class="card card-yellow reveal rev-d2" style="padding:28px 24px">
+        <div class="ico-box ico-yellow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3 style="margin-bottom:12px">Повний супровід</h3>
+        <p style="font-size:13px;margin-bottom:16px">Від участі в аукціоні до передачі ключів. Ми берем на себе всі етапи.</p>
+        <div class="feature-list" style="gap:6px">
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Участь в аукціоні замість вас</div></div>
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Митне очищення офіційно</div></div>
+          <div class="feature-item" style="padding:9px 12px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feature-item-ico"><polyline points="20 6 9 17 4 12"/></svg><div class="feature-item-txt" style="font-size:12px">Постановка на облік МВС</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS + CALC -->
+<section style="background:var(--col);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" id="how">
+  <div class="wrap">
+    <div class="feature-block reveal">
+      <div class="feature-body">
+        <div class="label" style="color:var(--yellow)"><div class="label-dot" style="background:var(--yellow)"></div>Процес</div>
+        <h2 style="margin-top:16px;margin-bottom:28px">Від замовлення<br>до ключів</h2>
+        <div class="steps">
+          <div class="step"><div class="step-n" style="background:linear-gradient(135deg,var(--yellow),#FFD000);box-shadow:0 4px 12px rgba(232,180,42,0.3);color:#1a1000">1</div><div class="step-body"><h4>Консультація та підбір</h4><p>Описуєте що хочете — ми підбираємо варіанти з фото та повним розрахунком вартості</p></div></div>
+          <div class="step"><div class="step-n" style="background:linear-gradient(135deg,var(--yellow),#FFD000);box-shadow:0 4px 12px rgba(232,180,42,0.3);color:#1a1000">2</div><div class="step-body"><h4>Авансовий платіж</h4><p>Фіксована передоплата для участі в аукціоні. Решта — після прибуття авто</p></div></div>
+          <div class="step"><div class="step-n" style="background:linear-gradient(135deg,var(--yellow),#FFD000);box-shadow:0 4px 12px rgba(232,180,42,0.3);color:#1a1000">3</div><div class="step-body"><h4>Покупка та відправка</h4><p>Виграємо аукціон, оформлюємо документи, відправляємо морем</p></div></div>
+          <div class="step"><div class="step-n" style="background:linear-gradient(135deg,var(--yellow),#FFD000);box-shadow:0 4px 12px rgba(232,180,42,0.3);color:#1a1000">4</div><div class="step-body"><h4>Митне оформлення</h4><p>Офіційне розмитнення. Повна прозорість — показуємо всі квитанції</p></div></div>
+          <div class="step"><div class="step-n" style="background:linear-gradient(135deg,var(--yellow),#FFD000);box-shadow:0 4px 12px rgba(232,180,42,0.3);color:#1a1000">5</div><div class="step-body"><h4>Передача авто</h4><p>Отримуєте авто з усіма документами, готове до реєстрації</p></div></div>
+        </div>
+      </div>
+      <div class="feature-vis reveal rev-d2">
+        <div class="feature-vis-title" style="margin-bottom:14px">Калькулятор · авто $10 000 зі США</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;color:var(--t2)">Вартість на аукціоні</span><span style="font-weight:700;color:var(--text)">$10 000</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;color:var(--t2)">Аукціонний збір</span><span style="font-weight:600">~$800</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;color:var(--t2)">Морська доставка</span><span style="font-weight:600">~$1 200</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;color:var(--t2)">Митне оформлення</span><span style="font-weight:600">~$3 500</span></div>
+          <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;color:var(--t2)">Послуги Drive Me</span><span style="font-weight:600">~$600</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 12px;background:var(--yel-bg);border-radius:10px;margin-top:8px;border:1px solid rgba(232,180,42,.2)">
+            <span style="font-weight:700">Разом під ключ</span>
+            <span style="font-weight:900;font-size:1.3rem;color:var(--yellow)">~$16 100</span>
+          </div>
+        </div>
+        <p style="font-size:11px;margin-top:12px;color:var(--t3)">* Вартість розраховується індивідуально для кожного авто</p>
+        <a href="#order" class="btn-p btn-lg" style="width:100%;justify-content:center;margin-top:16px;background:linear-gradient(135deg,var(--yellow),#FFD000);color:#1a1000">Замовити розрахунок</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order">
+  <div class="wrap" style="max-width:700px">
+    <div class="sec-head center reveal">
+      <div class="label" style="justify-content:center;color:var(--yellow)"><div class="label-dot" style="background:var(--yellow)"></div>Замовлення</div>
+      <h2 style="margin-top:14px">Яке авто привезти?</h2>
+    </div>
+    <div class="contact-form-box reveal">
+      <form class="js-form">
+        <div class="form-2col">
+          <div class="form-group"><label class="form-label">Ім'я</label><input type="text" class="form-ctrl" placeholder="Ваше ім'я" required></div>
+          <div class="form-group"><label class="form-label">Телефон</label><input type="tel" class="form-ctrl" placeholder="+38 (0XX) XXX-XX-XX" required></div>
+        </div>
+        <div class="form-2col">
+          <div class="form-group"><label class="form-label">Країна</label><select class="form-ctrl"><option>США 🇺🇸</option><option>Корея 🇰🇷</option><option>Не визначився</option></select></div>
+          <div class="form-group"><label class="form-label">Бюджет</label><select class="form-ctrl"><option>До $10 000</option><option>$10 000–$15 000</option><option>$15 000–$25 000</option><option>Понад $25 000</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">Бажане авто</label><textarea class="form-ctrl" placeholder="Марка, модель, рік або побажання..."></textarea></div>
+        <button type="submit" class="btn-p btn-lg" style="width:100%;justify-content:center;background:linear-gradient(135deg,var(--yellow),#FFD000);color:#1a1000">Надіслати запит</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a href="../index.html" class="nav-logo"><div class="nav-logo-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div><span class="nav-logo-name">DRIVE<em>&nbsp;ME</em></span></a><p>Повний цикл автомобільних послуг в Україні.</p></div><div class="footer-col"><h5>Послуги</h5><ul><li><a href="fleet.html">Автопарк</a></li><li><a href="sales.html">Продаж авто</a></li><li><a href="import.html">Імпорт авто</a></li><li><a href="insurance.html">Страхування</a></li><li><a href="service.html">Автосервіс</a></li></ul></div><div class="footer-col"><h5>Компанія</h5><ul><li><a href="../index.html">Головна</a></li><li><a href="#">Про нас</a></li></ul></div><div class="footer-col"><h5>Контакти</h5><ul><li><a href="tel:+380000000000">+38 (0XX) XXX-XX-XX</a></li><li><a href="mailto:info@driveme.ua">info@driveme.ua</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 DRIVE ME.</p><span>7 міст · 344+ авто</span></div></div></footer>
+</body>
+</html>
