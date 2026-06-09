@@ -657,6 +657,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   width: 680px;
   height: 680px;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 /* ── SVG layer ── */
@@ -833,50 +834,72 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 /* ── Service Nodes ── */
 .orb-node {
   position: absolute;
-  width: 118px;
-  height: 72px;
-  border-radius: 18px;
-  background: var(--col);
+  width: 190px;
+  height: 115px;
+  border-radius: 22px;
+  background: linear-gradient(160deg, var(--item) 0%, var(--col) 100%);
   border: 1px solid rgba(255,255,255,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
+  padding: 16px;
   text-decoration: none;
   z-index: 4;
   cursor: pointer;
   animation: orb-float 4.5s ease-in-out var(--nd, 0s) infinite;
-  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s, transform 0.25s;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: border-color 0.28s, box-shadow 0.28s, background 0.28s, transform 0.28s;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 @keyframes orb-float {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  50%       { transform: translateY(-10px); }
 }
 .orb-node:hover,
 .orb-node.active {
   border-color: var(--nc);
-  background: var(--item);
-  box-shadow: 0 0 0 2px var(--nc), 0 0 28px color-mix(in srgb, var(--nc) 25%, transparent), 0 12px 36px rgba(0,0,0,0.55);
+  background: linear-gradient(160deg, var(--item-h) 0%, var(--item) 100%);
+  box-shadow: 0 0 0 2px var(--nc), 0 0 40px rgba(232,115,42,0.2), 0 16px 48px rgba(0,0,0,0.6);
   animation-play-state: paused;
-  transform: translateY(0) scale(1.15) !important;
+  transform: translateY(0) scale(1.08) !important;
+}
+.orb-node::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+  pointer-events: none;
 }
 .orb-n-ico { line-height: 0; flex-shrink: 0; }
 .orb-n-lbl {
-  font-size: 9.5px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 800;
   color: var(--t2);
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: .4px;
-  line-height: 1.25;
+  letter-spacing: .6px;
+  line-height: 1.2;
   white-space: nowrap;
   transition: color 0.2s;
+}
+.orb-n-metric {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--nc, var(--accent));
+  text-align: center;
+  letter-spacing: -.01em;
+  line-height: 1;
+  transition: opacity 0.2s;
 }
 .orb-node:hover .orb-n-lbl,
 .orb-node.active .orb-n-lbl {
   color: var(--text);
+}
+.orb-node:hover .orb-n-metric,
+.orb-node.active .orb-n-metric {
+  opacity: 1;
 }
 
 /* ── RESPONSIVE ── */
