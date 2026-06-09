@@ -874,7 +874,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 .orb-n-lbl {
   font-size: 11px;
   font-weight: 800;
-  color: var(--t2);
+  color: #ffffff;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .6px;
