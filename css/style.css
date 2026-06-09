@@ -832,7 +832,10 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   width: 190px;
   height: 115px;
   border-radius: 22px;
-  background: linear-gradient(160deg, var(--item) 0%, var(--col) 100%);
+  background-color: rgba(15,12,10,0.92);
+  background-image: linear-gradient(rgba(6,5,4,0.62), rgba(6,5,4,0.62)), var(--node-bg, none);
+  background-size: cover;
+  background-position: center;
   border: 1px solid rgba(255,255,255,0.10);
   display: flex;
   flex-direction: column;
@@ -844,7 +847,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   z-index: 4;
   cursor: pointer;
   animation: orb-float 4.5s ease-in-out var(--nd, 0s) infinite;
-  transition: border-color 0.28s, box-shadow 0.28s, background 0.28s, transform 0.28s;
+  transition: border-color 0.28s, box-shadow 0.28s, background-image 0.28s, transform 0.28s;
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 @keyframes orb-float {
@@ -854,7 +857,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 .orb-node:hover,
 .orb-node.active {
   border-color: var(--nc);
-  background: linear-gradient(160deg, var(--item-h) 0%, var(--item) 100%);
+  background-image: linear-gradient(rgba(6,5,4,0.35), rgba(6,5,4,0.35)), var(--node-bg, none);
   box-shadow: 0 0 0 2px var(--nc), 0 0 40px rgba(232,115,42,0.2), 0 16px 48px rgba(0,0,0,0.6);
   animation-play-state: paused;
   transform: translateY(0) scale(1.08) !important;
@@ -896,6 +899,17 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 .orb-node.active .orb-n-metric {
   opacity: 1;
 }
+
+/* Node photo backgrounds */
+.orb-node[data-svc="fleet"]     { --node-bg: url('https://images.unsplash.com/photo-pmZnZwwn9dM?auto=format&fit=crop&w=400&h=240&q=80'); }
+.orb-node[data-svc="sales"]     { --node-bg: url('https://images.unsplash.com/photo-_fTHxOafgoM?auto=format&fit=crop&w=400&h=240&q=80'); }
+.orb-node[data-svc="import"]    { --node-bg: url('https://images.unsplash.com/photo-xP5an6iXcf0?auto=format&fit=crop&w=400&h=240&q=80'); }
+.orb-node[data-svc="insurance"] { --node-bg: url('https://images.unsplash.com/photo-I6h5O0cet4Q?auto=format&fit=crop&w=400&h=240&q=80'); }
+.orb-node[data-svc="service"]   { --node-bg: url('https://images.unsplash.com/photo-_UhFK7n7Z4Y?auto=format&fit=crop&w=400&h=240&q=80'); }
+
+/* Text shadows for readability on photos */
+.orb-n-lbl   { text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
+.orb-n-metric { text-shadow: 0 1px 6px rgba(0,0,0,0.9); }
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
