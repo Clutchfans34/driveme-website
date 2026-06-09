@@ -149,7 +149,8 @@ function initOrbit() {
     metricEl.style.color = d.color;
     infoEl.classList.add('show');
     center.classList.add('lit');
-    center.style.borderColor = d.color + '55';
+    center.style.borderColor = d.color;
+    center.style.boxShadow = `0 0 0 3px ${d.color}, 0 0 18px ${d.color}CC, 0 0 42px ${d.color}66`;
     // Lines
     lines.forEach(l => { l.classList.remove('lit'); l.style.stroke = ''; });
     const ln = document.getElementById('ln-' + svc);
@@ -164,6 +165,7 @@ function initOrbit() {
     infoEl.classList.remove('show');
     center.classList.remove('lit');
     center.style.borderColor = '';
+    center.style.boxShadow = '';
     lines.forEach(l => { l.classList.remove('lit'); l.style.stroke = ''; });
     nodes.forEach(n => n.classList.remove('active'));
   }
