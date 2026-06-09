@@ -606,6 +606,237 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 .rev-d1{transition-delay:.08s}.rev-d2{transition-delay:.16s}.rev-d3{transition-delay:.24s}
 .rev-d4{transition-delay:.32s}.rev-d5{transition-delay:.40s}
 
+/* ══════════════════════════════════════════
+   ORBITAL SYSTEM — Hero Visual
+   ══════════════════════════════════════════ */
+
+.orb-sys {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  flex-shrink: 0;
+}
+
+/* ── SVG layer ── */
+.orb-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Outer orbit ring — marching-ants rotation via dashoffset */
+.orb-ring-out {
+  fill: none;
+  stroke: rgba(232,115,42,0.22);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 10;
+  animation: orb-march 22s linear infinite;
+}
+@keyframes orb-march {
+  to { stroke-dashoffset: -1194; } /* 2π×190 ≈ 1194 */
+}
+
+/* Mid ring — static dim */
+.orb-ring-mid {
+  fill: none;
+  stroke: rgba(255,255,255,0.06);
+  stroke-width: 1;
+  stroke-dasharray: 2 8;
+}
+
+/* Inner halo fill */
+.orb-ring-in {
+  fill: rgba(232,115,42,0.06);
+  stroke: rgba(232,115,42,0.18);
+  stroke-width: 1.5;
+}
+
+/* Pulse rings expanding from center */
+.orb-pulse {
+  fill: none;
+  stroke: rgba(232,115,42,0.20);
+  stroke-width: 1.5;
+  animation: orb-pulse-anim 3.2s ease-out infinite;
+}
+.orb-pulse-lag {
+  stroke: rgba(232,115,42,0.10);
+  stroke-width: 1;
+  animation-delay: 1.6s;
+}
+@keyframes orb-pulse-anim {
+  0%   { r: 58; opacity: 1; }
+  100% { r: 100; opacity: 0; }
+}
+
+/* Connection lines */
+.orb-ln {
+  stroke: rgba(255,255,255,0.09);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 5;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease, opacity 0.3s ease;
+}
+.orb-ln.lit {
+  stroke-dasharray: none;
+  stroke-width: 2;
+  opacity: 0.65;
+}
+
+/* ── Center circle ── */
+.orb-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: var(--col);
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 48px rgba(232,115,42,0.14), inset 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  z-index: 3;
+}
+.orb-center.lit {
+  box-shadow: 0 0 64px rgba(232,115,42,0.22), inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* Default state */
+.orb-cd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.orb-cd.hide {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+  position: absolute;
+}
+.orb-cd-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-l));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(232,115,42,0.4);
+  margin-bottom: 2px;
+}
+.orb-cd-name {
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: -.01em;
+  color: var(--text);
+  line-height: 1;
+}
+.orb-cd-sub {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--t3);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+/* Info state (shown on node hover) */
+.orb-ci {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 6px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  position: absolute;
+}
+.orb-ci.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.orb-ci-tag {
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  line-height: 1;
+}
+.orb-ci-metric {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+.orb-ci-hint {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--t3);
+  letter-spacing: .3px;
+}
+
+/* ── Service Nodes ── */
+.orb-node {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--col);
+  border: 1px solid rgba(255,255,255,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  z-index: 4;
+  cursor: pointer;
+  animation: orb-float 4.5s ease-in-out var(--nd, 0s) infinite;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s, transform 0.25s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+@keyframes orb-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.orb-node:hover,
+.orb-node.active {
+  border-color: var(--nc);
+  background: var(--item);
+  box-shadow: 0 0 0 2px var(--nc), 0 0 28px color-mix(in srgb, var(--nc) 25%, transparent), 0 12px 36px rgba(0,0,0,0.55);
+  animation-play-state: paused;
+  transform: translateY(0) scale(1.15) !important;
+}
+.orb-n-ico { line-height: 0; flex-shrink: 0; }
+.orb-n-lbl {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--t2);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  line-height: 1.25;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.orb-node:hover .orb-n-lbl,
+.orb-node.active .orb-n-lbl {
+  color: var(--text);
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .hero-inner{grid-template-columns:1fr;gap:48px}

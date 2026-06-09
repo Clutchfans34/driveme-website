@@ -119,6 +119,66 @@ document.querySelectorAll('.js-form').forEach(f => {
   });
 });
 
+// ── ORBITAL SYSTEM ──
+const orbData = {
+  fleet:     { label:'Автопарк',    metric:'344+ авто',   color:'#E8732A' },
+  sales:     { label:'Продаж авто', metric:'Trade-in',    color:'#5B9FE8' },
+  import:    { label:'Імпорт авто', metric:'−40% ціна',  color:'#E8B42A' },
+  insurance: { label:'Страхування', metric:'% від факту', color:'#2CC88A' },
+  service:   { label:'Автосервіс',  metric:'3 міс. гарант.',color:'#9B78E0' },
+};
+
+function initOrbit() {
+  const nodes   = document.querySelectorAll('.orb-node');
+  const lines   = document.querySelectorAll('.orb-ln');
+  const center  = document.getElementById('orbCenter');
+  const defEl   = document.getElementById('orbDef');
+  const infoEl  = document.getElementById('orbInfo');
+  const tagEl   = document.getElementById('orbTag');
+  const metricEl= document.getElementById('orbMetric');
+  if (!nodes.length) return;
+
+  function activate(svc) {
+    const d = orbData[svc];
+    if (!d) return;
+    // Center
+    defEl.classList.add('hide');
+    tagEl.textContent    = d.label;
+    tagEl.style.color    = d.color;
+    metricEl.textContent = d.metric;
+    metricEl.style.color = d.color;
+    infoEl.classList.add('show');
+    center.classList.add('lit');
+    center.style.borderColor = d.color + '55';
+    // Lines
+    lines.forEach(l => { l.classList.remove('lit'); l.style.stroke = ''; });
+    const ln = document.getElementById('ln-' + svc);
+    if (ln) { ln.classList.add('lit'); ln.style.stroke = d.color; }
+    // Nodes
+    nodes.forEach(n => n.classList.remove('active'));
+    document.querySelector(`.orb-node[data-svc="${svc}"]`)?.classList.add('active');
+  }
+
+  function deactivate() {
+    defEl.classList.remove('hide');
+    infoEl.classList.remove('show');
+    center.classList.remove('lit');
+    center.style.borderColor = '';
+    lines.forEach(l => { l.classList.remove('lit'); l.style.stroke = ''; });
+    nodes.forEach(n => n.classList.remove('active'));
+  }
+
+  nodes.forEach(node => {
+    const svc = node.dataset.svc;
+    node.addEventListener('mouseenter', () => activate(svc));
+    node.addEventListener('mouseleave', deactivate);
+    // Touch support
+    node.addEventListener('touchstart', e => { e.preventDefault(); activate(svc); }, {passive:false});
+    node.addEventListener('touchend', () => setTimeout(deactivate, 800));
+  });
+}
+initOrbit();
+
 // ── BAR CHART ANIMATE ──
 const baro = new IntersectionObserver(entries => {
   entries.forEach(e => {
