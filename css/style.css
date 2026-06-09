@@ -367,6 +367,20 @@ p{color:var(--t2);line-height:1.75}
 }
 .svc-card:hover .svc-arrow{background:var(--accent);border-color:var(--accent);color:#fff}
 
+/* ── BRAND WATERMARK ── */
+.brand-wm{
+  font-size:clamp(64px,10vw,130px);
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1;
+  color:rgba(255,255,255,0.035);
+  pointer-events:none;
+  user-select:none;
+  margin-bottom:8px;
+  white-space:nowrap;
+}
+.brand-wm span{color:rgba(232,115,42,0.07)}
+
 /* ── STATS BAR ── */
 .stats-bar{
   border-top:1px solid var(--border);
