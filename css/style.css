@@ -829,9 +829,9 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 /* ── Service Nodes ── */
 .orb-node {
   position: absolute;
-  width: 285px;
-  height: 173px;
-  border-radius: 28px;
+  width: 219px;
+  height: 133px;
+  border-radius: 22px;
   background-color: rgba(15,12,10,0.92);
   background-image: linear-gradient(rgba(6,5,4,0.62), rgba(6,5,4,0.62)), var(--node-bg, none);
   background-size: cover;
@@ -872,12 +872,12 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 }
 .orb-n-ico { line-height: 0; flex-shrink: 0; }
 .orb-n-lbl {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--t2);
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: .6px;
+  letter-spacing: .4px;
   line-height: 1.2;
   white-space: nowrap;
   transition: color 0.2s;
