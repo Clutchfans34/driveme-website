@@ -733,8 +733,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
   background: #020201;
   border: 1px solid rgba(255,255,255,0.12);
