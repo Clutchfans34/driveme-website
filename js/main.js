@@ -141,13 +141,7 @@ function initOrbit() {
   function activate(svc) {
     const d = orbData[svc];
     if (!d) return;
-    // Center
-    defEl.classList.add('hide');
-    tagEl.textContent    = d.label;
-    tagEl.style.color    = d.color;
-    metricEl.textContent = d.metric;
-    metricEl.style.color = d.color;
-    infoEl.classList.add('show');
+    // Center — glow only, logo stays
     center.classList.add('lit');
     center.style.borderColor = d.color;
     center.style.boxShadow = `0 0 0 3px ${d.color}, 0 0 18px ${d.color}CC, 0 0 42px ${d.color}66`;
@@ -161,8 +155,6 @@ function initOrbit() {
   }
 
   function deactivate() {
-    defEl.classList.remove('hide');
-    infoEl.classList.remove('show');
     center.classList.remove('lit');
     center.style.borderColor = '';
     center.style.boxShadow = '';
