@@ -251,18 +251,17 @@ p{color:var(--t2);line-height:1.75}
   bottom:-100px;right:-100px;pointer-events:none;
 }
 .hero-inner{
-  display:flex;flex-direction:column;align-items:center;
-  gap:44px;width:100%;text-align:center;
-  padding:32px 0 56px;
+  display:grid;grid-template-columns:1fr 680px;
+  gap:48px;align-items:center;width:100%;
 }
-.hero-body{max-width:700px;width:100%}
-.hero-eyebrow{margin-bottom:20px;display:flex;justify-content:center}
-.hero-h{margin-bottom:18px}
+.hero-body{max-width:520px}
+.hero-eyebrow{margin-bottom:24px}
+.hero-h{margin-bottom:20px}
 .hero-h span{color:var(--accent)}
-.hero-desc{font-size:1.1rem;max-width:520px;margin:0 auto 32px;color:var(--t2)}
-.hero-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hero-desc{font-size:1.1rem;max-width:440px;margin-bottom:36px;color:var(--t2)}
+.hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .hero-stats{
-  display:flex;gap:40px;margin-top:40px;justify-content:center;
+  display:flex;gap:32px;margin-top:40px;
   padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap;
 }
 .hero-stat-val{font-size:1.8rem;font-weight:900;letter-spacing:-.03em;color:var(--text);margin-bottom:2px}
@@ -611,8 +610,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 
 .orb-sys {
   position: relative;
-  width: 700px;
-  height: 700px;
+  width: 680px;
+  height: 680px;
   flex-shrink: 0;
 }
 
@@ -689,8 +688,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 156px;
-  height: 156px;
+  width: 152px;
+  height: 152px;
   border-radius: 50%;
   background: var(--col);
   border: 1px solid var(--border2);
@@ -790,16 +789,16 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 /* ── Service Nodes ── */
 .orb-node {
   position: absolute;
-  width: 106px;
-  height: 106px;
-  border-radius: 50%;
+  width: 118px;
+  height: 72px;
+  border-radius: 18px;
   background: var(--col);
   border: 1px solid rgba(255,255,255,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   text-decoration: none;
   z-index: 4;
   cursor: pointer;
@@ -821,7 +820,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 }
 .orb-n-ico { line-height: 0; flex-shrink: 0; }
 .orb-n-lbl {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   color: var(--t2);
   text-align: center;
