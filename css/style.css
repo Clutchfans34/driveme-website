@@ -484,23 +484,15 @@ p{color:var(--t2);line-height:1.75}
 .step-body p{font-size:13px;color:var(--t2);line-height:1.6}
 
 /* ── CITIES ── */
-.cities-grid{
-  display:grid;grid-template-columns:repeat(7,1fr);gap:10px;
+.geo-map{margin:48px 0 44px}
+.geo-stats{
+  display:flex;justify-content:center;align-items:flex-start;
+  gap:64px;padding-top:36px;
+  border-top:1px solid var(--border);
 }
-.city-card{
-  background:var(--col);border:1px solid var(--border);
-  border-radius:12px;padding:16px 12px;text-align:center;
-  transition:all var(--tr);cursor:default;
-}
-.city-card:hover{border-color:var(--accent-brd);background:var(--item)}
-.city-ico{
-  width:36px;height:36px;border-radius:9px;
-  background:var(--accent-bg);color:var(--accent);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 10px;
-}
-.city-name{font-size:13px;font-weight:700;margin-bottom:3px}
-.city-cars{font-size:11px;color:var(--accent);font-weight:600}
+.geo-stat{text-align:center}
+.geo-stat-val{font-size:38px;font-weight:900;color:var(--accent);line-height:1}
+.geo-stat-lbl{font-size:11px;color:var(--t3);margin-top:5px;text-transform:uppercase;letter-spacing:.5px}
 
 /* ── TEAM ── */
 .team-grid{
@@ -1029,7 +1021,6 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 @media(max-width:1100px){
   .hero-inner{gap:32px}
   .hero-visual{display:none}
-  .cities-grid{grid-template-columns:repeat(4,1fr)}
   .services-grid{grid-template-columns:repeat(3,1fr)}
   .team-grid{grid-template-columns:repeat(3,1fr)}
   .feature-block{grid-template-columns:1fr;gap:48px}
@@ -1047,7 +1038,7 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   .form-2col{grid-template-columns:1fr}
   .stats-row{justify-content:center}
   .stat-div{display:none}
-  .cities-grid{grid-template-columns:repeat(3,1fr)}
+  .geo-stats{gap:32px}
   .footer-grid{grid-template-columns:1fr;gap:28px}
   .footer-bottom{flex-direction:column;text-align:center}
   .hero-stats{gap:20px;flex-wrap:wrap}
@@ -1055,7 +1046,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   .contact-form-box{padding:24px 20px}
 }
 @media(max-width:480px){
-  .cities-grid{grid-template-columns:repeat(2,1fr)}
+  .geo-stats{gap:20px;flex-wrap:wrap}
+  .geo-stat-val{font-size:28px}
   .cta-btns{flex-direction:column;align-items:center}
   .hero-btns{flex-direction:column;width:100%}
   .hero-btns a{width:100%;justify-content:center}
