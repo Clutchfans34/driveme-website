@@ -493,23 +493,15 @@ p{color:var(--t2);line-height:1.75}
   border:1px solid rgba(232,115,42,0.22);
   border-radius:16px;padding:24px 20px;
   position:relative;overflow:hidden;
-  transition:all var(--tr);
+  transition:border-color var(--tr);
   display:flex;flex-direction:column;
   min-height:200px;
-  background-color:rgba(10,8,6,0.9);
-  background-image:linear-gradient(160deg,rgba(10,8,6,0.80) 0%,rgba(10,8,6,0.55) 100%), var(--gc-bg);
   background-size:cover;
   background-position:center;
 }
-.geo-card:hover{
-  border-color:rgba(232,115,42,0.5);
-  background-image:linear-gradient(160deg,rgba(10,8,6,0.55) 0%,rgba(10,8,6,0.30) 100%), var(--gc-bg);
-  background-size:cover;background-position:center;
-}
+.geo-card:hover{border-color:rgba(232,115,42,0.55)}
 .geo-card--hub{border-color:rgba(232,115,42,0.5)}
-.geo-card--soon{
-  border-style:dashed;border-color:rgba(120,120,120,0.25);opacity:.55;
-}
+.geo-card--soon{border-style:dashed;border-color:rgba(120,120,120,0.25);opacity:.55}
 .geo-card--soon:hover{opacity:.65}
 .geo-dot{
   width:8px;height:8px;border-radius:50%;
