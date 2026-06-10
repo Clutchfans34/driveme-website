@@ -880,11 +880,16 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   line-height: 1;
 }
 .orb-cd-sub {
-  font-size: 8px;
-  font-weight: 600;
-  color: var(--t3);
-  text-transform: uppercase;
-  letter-spacing: .6px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1;
+}
+.orb-cd-sub em {
+  color: var(--accent);
+  font-style: normal;
 }
 
 /* Info state (shown on node hover) */
