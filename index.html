@@ -371,7 +371,7 @@
 </section>
 
 <!-- ── CITIES ── -->
-<section id="geo" style="background-image:linear-gradient(rgba(10,8,6,0.94),rgba(10,8,6,0.94)),url('images/photo_2026-05-23 00.38.30.jpeg');background-size:cover;background-position:center;padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<section id="geo" style="background-image:linear-gradient(rgba(10,8,6,0.96),rgba(10,8,6,0.96)),url('images/photo_2026-05-23 00.38.30.jpeg');background-size:cover;background-position:center;padding:80px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="wrap">
     <div class="sec-head center reveal">
       <div class="label"><div class="label-dot"></div>Географія</div>
@@ -379,9 +379,89 @@
       <p class="sec-sub" style="max-width:540px;margin:16px auto 0;color:var(--t3)">Від Львова до Запоріжжя — мережа, що охоплює ключові регіони країни</p>
     </div>
 
-    <!-- SVG network map -->
-    <div class="geo-map reveal">
-      <svg viewBox="0 0 1320 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:0 auto;overflow:visible">
+    <!-- City cards grid -->
+    <div class="geo-grid reveal">
+
+      <!-- Київ -->
+      <div class="geo-card">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Київ</div>
+        <div class="geo-tags">
+          <span class="geo-tag">Продаж авто</span>
+          <span class="geo-tag">Купівля авто</span>
+        </div>
+      </div>
+
+      <!-- Дніпро -->
+      <div class="geo-card geo-card--hub">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Дніпро</div>
+        <div class="geo-badge">Головний хаб</div>
+        <div class="geo-tags">
+          <span class="geo-tag">Автопарк</span>
+          <span class="geo-tag">Автосервіс</span>
+          <span class="geo-tag">Продаж авто</span>
+          <span class="geo-tag">ДТП Асістант</span>
+        </div>
+      </div>
+
+      <!-- Львів -->
+      <div class="geo-card">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Львів</div>
+        <div class="geo-tags"><span class="geo-tag">Автопарк</span></div>
+      </div>
+
+      <!-- Вінниця -->
+      <div class="geo-card">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Вінниця</div>
+        <div class="geo-tags"><span class="geo-tag">Автопарк</span></div>
+      </div>
+
+      <!-- Полтава -->
+      <div class="geo-card">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Полтава</div>
+        <div class="geo-tags"><span class="geo-tag">Автопарк</span></div>
+      </div>
+
+      <!-- Кривий Ріг -->
+      <div class="geo-card">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Кривий Ріг</div>
+        <div class="geo-tags"><span class="geo-tag">Автопарк</span></div>
+      </div>
+
+      <!-- Запоріжжя -->
+      <div class="geo-card">
+        <div class="geo-dot"></div>
+        <div class="geo-city">Запоріжжя</div>
+        <div class="geo-tags"><span class="geo-tag">Автопарк</span></div>
+      </div>
+
+      <!-- Одеса — coming soon -->
+      <div class="geo-card geo-card--soon">
+        <div class="geo-dot geo-dot--soon"></div>
+        <div class="geo-city" style="color:var(--t3)">Одеса</div>
+        <div class="geo-tags"><span class="geo-tag geo-tag--soon">Незабаром</span></div>
+      </div>
+
+    </div>
+
+    <!-- Info row -->
+    <div class="geo-info-row reveal">
+      <div class="geo-info-item"><span class="geo-info-val">2018</span><span class="geo-info-lbl">рік заснування</span></div>
+      <div class="geo-info-sep"></div>
+      <div class="geo-info-item"><span class="geo-info-val">7</span><span class="geo-info-lbl">міст присутності</span></div>
+      <div class="geo-info-sep"></div>
+      <div class="geo-info-item"><span class="geo-info-val">5</span><span class="geo-info-lbl">напрямків бізнесу</span></div>
+      <div class="geo-info-sep"></div>
+      <div class="geo-info-item"><span class="geo-info-val" style="font-size:18px">Uklon · Bolt</span><span class="geo-info-lbl">офіційний партнер</span></div>
+    </div>
+
+    <!-- (old SVG kept for reference - replaced) -->
+    <div style="display:none"><svg viewBox="0 0 1320 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:0 auto;overflow:visible">
         <defs>
           <filter id="gcity" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="5" result="b"/>
@@ -534,9 +614,8 @@
         <text x="548" y="524" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#666" text-anchor="middle">Одеса</text>
         <text x="548" y="540" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555" text-anchor="middle">Незабаром</text>
       </svg>
-    </div>
+    </div></div>
 
-    <!-- Stats row -->
   </div>
 </section>
 
