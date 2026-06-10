@@ -246,11 +246,9 @@ p{color:var(--t2);line-height:1.75}
 .nav-link--soon{cursor:default}
 .nav-link--soon:hover{background:none;color:var(--t2)}
 
-/* orb-node and svc-card without href — not clickable */
-.orb-node:not([href]){cursor:default;pointer-events:none}
-.orb-node:not([href]):hover{transform:none;box-shadow:none}
+/* orb-node and svc-card without href — hover works, click does nothing */
+.orb-node:not([href]){cursor:default}
 .svc-card:not([href]){cursor:default}
-.svc-card:not([href]):hover{transform:none;box-shadow:none;border-color:var(--border)}
 
 /* ── CARDS ── */
 .card{
