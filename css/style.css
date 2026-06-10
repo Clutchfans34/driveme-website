@@ -532,17 +532,17 @@ p{color:var(--t2);line-height:1.75}
 .geo-city{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.2}
 .geo-badge{
   display:inline-block;font-size:9px;font-weight:700;
-  color:var(--accent);text-transform:uppercase;letter-spacing:.8px;
-  border:1px solid rgba(232,115,42,0.35);border-radius:4px;
+  color:#fff;text-transform:uppercase;letter-spacing:.8px;
+  border:1px solid rgba(255,255,255,0.35);border-radius:4px;
   padding:2px 7px;margin-bottom:10px;
 }
 .geo-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:12px}
 .geo-tag{
-  font-size:10px;font-weight:600;color:var(--accent);
-  background:rgba(232,115,42,0.1);border-radius:5px;
+  font-size:10px;font-weight:600;color:#fff;
+  background:rgba(255,255,255,0.12);border-radius:5px;
   padding:3px 9px;letter-spacing:.3px;
 }
-.geo-tag--soon{color:#666;background:rgba(100,100,100,0.1)}
+.geo-tag--soon{color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.06)}
 
 /* Info row */
 .geo-info-row{
