@@ -382,111 +382,158 @@
 
     <!-- SVG network map -->
     <div class="geo-map reveal">
-      <svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:0 auto;overflow:visible">
+      <svg viewBox="0 0 1320 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:0 auto;overflow:visible">
         <defs>
           <filter id="gcity" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="5" result="b"/>
             <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
           <filter id="gcity2" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="9" result="b"/>
+            <feGaussianBlur stdDeviation="10" result="b"/>
             <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
         </defs>
 
-        <!-- ── Активні з'єднання ── -->
-        <g stroke="#E8732A" stroke-width="1.2" fill="none" stroke-dasharray="6 8">
-          <!-- Львів — Київ -->
-          <line x1="105" y1="210" x2="490" y2="140" stroke-opacity=".32"/>
-          <!-- Львів — Вінниця -->
-          <line x1="105" y1="210" x2="310" y2="295" stroke-opacity=".24"/>
-          <!-- Київ — Вінниця -->
-          <line x1="490" y1="140" x2="310" y2="295" stroke-opacity=".26"/>
-          <!-- Київ — Дніпро -->
-          <line x1="490" y1="140" x2="700" y2="295" stroke-opacity=".32"/>
-          <!-- Київ — Кривий Ріг -->
-          <line x1="490" y1="140" x2="590" y2="390" stroke-opacity=".18"/>
-          <!-- Вінниця — Кривий Ріг -->
-          <line x1="310" y1="295" x2="590" y2="390" stroke-opacity=".24"/>
-          <!-- Дніпро — Кривий Ріг -->
-          <line x1="700" y1="295" x2="590" y2="390" stroke-opacity=".28"/>
-          <!-- Дніпро — Запоріжжя -->
-          <line x1="700" y1="295" x2="770" y2="395" stroke-opacity=".28"/>
-          <!-- Запоріжжя — Кривий Ріг -->
-          <line x1="770" y1="395" x2="590" y2="390" stroke-opacity=".22"/>
+        <!-- ══ ЛІВА ПАНЕЛЬ ══ -->
+        <line x1="158" y1="50" x2="158" y2="530" stroke="#E8732A" stroke-opacity=".18" stroke-width="1"/>
+        <text x="79" y="72" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#555" text-anchor="middle" letter-spacing="2">DRIVEME GROUP</text>
+        <text x="79" y="155" font-family="Inter,system-ui,sans-serif" font-size="34" font-weight="900" fill="#E8732A" text-anchor="middle">2018</text>
+        <text x="79" y="173" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555" text-anchor="middle">рік заснування</text>
+        <text x="79" y="240" font-family="Inter,system-ui,sans-serif" font-size="38" font-weight="900" fill="#E8732A" text-anchor="middle">7</text>
+        <text x="79" y="258" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555" text-anchor="middle">міст присутності</text>
+        <text x="79" y="325" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#E8732A" text-anchor="middle">344+</text>
+        <text x="79" y="343" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555" text-anchor="middle">автомобілів</text>
+        <text x="79" y="410" font-family="Inter,system-ui,sans-serif" font-size="38" font-weight="900" fill="#E8732A" text-anchor="middle">5</text>
+        <text x="79" y="428" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555" text-anchor="middle">напрямків бізнесу</text>
+
+        <!-- ══ ПРАВА ПАНЕЛЬ ══ -->
+        <line x1="1162" y1="50" x2="1162" y2="530" stroke="#E8732A" stroke-opacity=".18" stroke-width="1"/>
+        <text x="1241" y="72" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="#555" text-anchor="middle" letter-spacing="2">СЕРВІСИ</text>
+        <!-- Автопарк -->
+        <circle cx="1178" cy="120" r="4" fill="#E8732A"/>
+        <text x="1190" y="124" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#ddd">Автопарк</text>
+        <text x="1190" y="139" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555">усі 7 міст</text>
+        <!-- Автосервіс -->
+        <circle cx="1178" cy="175" r="4" fill="#E8732A"/>
+        <text x="1190" y="179" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#ddd">Автосервіс</text>
+        <text x="1190" y="194" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555">Дніпро</text>
+        <!-- Продаж авто -->
+        <circle cx="1178" cy="230" r="4" fill="#E8732A"/>
+        <text x="1190" y="234" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#ddd">Продаж авто</text>
+        <text x="1190" y="249" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555">Дніпро · Київ</text>
+        <!-- ДТП -->
+        <circle cx="1178" cy="285" r="4" fill="#E8732A"/>
+        <text x="1190" y="289" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#ddd">ДТП Асістант</text>
+        <text x="1190" y="304" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555">Дніпро</text>
+        <!-- Імпорт -->
+        <circle cx="1178" cy="340" r="4" fill="#E8732A"/>
+        <text x="1190" y="344" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#ddd">Імпорт авто</text>
+        <text x="1190" y="359" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555">США · Корея</text>
+        <!-- Divider -->
+        <line x1="1170" y1="378" x2="1305" y2="378" stroke="#2a2a2a" stroke-width="1"/>
+        <!-- Одеса coming soon -->
+        <circle cx="1178" cy="405" r="4" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="3 2"/>
+        <text x="1190" y="409" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#555">Одеса</text>
+        <text x="1190" y="424" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#444">Незабаром</text>
+
+        <!-- ══ АКТИВНІ З'ЄДНАННЯ ══ -->
+        <g stroke="#E8732A" stroke-width="1.2" fill="none" stroke-dasharray="6 9">
+          <line x1="235" y1="268" x2="590" y2="148" stroke-opacity=".30"/><!-- Львів—Київ -->
+          <line x1="235" y1="268" x2="375" y2="340" stroke-opacity=".22"/><!-- Львів—Вінниця -->
+          <line x1="590" y1="148" x2="375" y2="340" stroke-opacity=".24"/><!-- Київ—Вінниця -->
+          <line x1="590" y1="148" x2="745" y2="222" stroke-opacity=".28"/><!-- Київ—Полтава -->
+          <line x1="590" y1="148" x2="858" y2="325" stroke-opacity=".30"/><!-- Київ—Дніпро -->
+          <line x1="745" y1="222" x2="858" y2="325" stroke-opacity=".26"/><!-- Полтава—Дніпро -->
+          <line x1="375" y1="340" x2="700" y2="428" stroke-opacity=".22"/><!-- Вінниця—КривийРіг -->
+          <line x1="858" y1="325" x2="700" y2="428" stroke-opacity=".28"/><!-- Дніпро—КривийРіг -->
+          <line x1="858" y1="325" x2="960" y2="432" stroke-opacity=".26"/><!-- Дніпро—Запоріжжя -->
+          <line x1="960" y1="432" x2="700" y2="428" stroke-opacity=".22"/><!-- Запоріжжя—КривийРіг -->
         </g>
 
-        <!-- ── Одеса: прийдемо скоро (fade) ── -->
-        <g stroke="#E8732A" stroke-width="1" fill="none" stroke-dasharray="4 10" opacity=".25">
-          <line x1="310" y1="295" x2="435" y2="480"/>
-          <line x1="590" y1="390" x2="435" y2="480"/>
+        <!-- ── Одеса: незабаром (fade) ── -->
+        <g stroke="#E8732A" stroke-width="1" fill="none" stroke-dasharray="4 12" opacity=".2">
+          <line x1="375" y1="340" x2="548" y2="500"/>
+          <line x1="700" y1="428" x2="548" y2="500"/>
         </g>
 
-        <!-- ── ЛЬВІВ ── -->
-        <circle cx="105" cy="210" r="10" fill="#E8732A" fill-opacity="0.14">
+        <!-- ══ МІСТА ══ -->
+
+        <!-- ЛЬВІВ -->
+        <circle cx="235" cy="268" r="10" fill="#E8732A" fill-opacity="0.14">
           <animate attributeName="r" values="10;32;10" dur="3.2s" begin="0s" repeatCount="indefinite"/>
           <animate attributeName="fill-opacity" values="0.14;0;0.14" dur="3.2s" begin="0s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="105" cy="210" r="8" fill="#E8732A" fill-opacity="0.2"/>
-        <circle cx="105" cy="210" r="5" fill="#E8732A" filter="url(#gcity)"/>
-        <text x="105" y="178" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Львів</text>
-        <text x="105" y="196" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Таксі флот</text>
+        <circle cx="235" cy="268" r="8" fill="#E8732A" fill-opacity="0.2"/>
+        <circle cx="235" cy="268" r="5" fill="#E8732A" filter="url(#gcity)"/>
+        <text x="235" y="235" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Львів</text>
+        <text x="235" y="253" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Автопарк</text>
 
-        <!-- ── КИЇВ ── -->
-        <circle cx="490" cy="140" r="14" fill="#E8732A" fill-opacity="0.14">
+        <!-- КИЇВ -->
+        <circle cx="590" cy="148" r="14" fill="#E8732A" fill-opacity="0.14">
           <animate attributeName="r" values="14;42;14" dur="2.8s" begin=".4s" repeatCount="indefinite"/>
           <animate attributeName="fill-opacity" values="0.18;0;0.18" dur="2.8s" begin=".4s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="490" cy="140" r="12" fill="#E8732A" fill-opacity="0.22"/>
-        <circle cx="490" cy="140" r="7" fill="#E8732A" filter="url(#gcity2)"/>
-        <text x="490" y="102" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">Київ</text>
-        <text x="490" y="120" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Таксі · Продаж авто</text>
+        <circle cx="590" cy="148" r="12" fill="#E8732A" fill-opacity="0.22"/>
+        <circle cx="590" cy="148" r="7" fill="#E8732A" filter="url(#gcity2)"/>
+        <text x="590" y="108" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">Київ</text>
+        <text x="590" y="126" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Продаж та купівля авто</text>
 
-        <!-- ── ВІННИЦЯ ── -->
-        <circle cx="310" cy="295" r="10" fill="#E8732A" fill-opacity="0.14">
+        <!-- ПОЛТАВА -->
+        <circle cx="745" cy="222" r="10" fill="#E8732A" fill-opacity="0.14">
+          <animate attributeName="r" values="10;32;10" dur="3.3s" begin=".9s" repeatCount="indefinite"/>
+          <animate attributeName="fill-opacity" values="0.14;0;0.14" dur="3.3s" begin=".9s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="745" cy="222" r="8" fill="#E8732A" fill-opacity="0.2"/>
+        <circle cx="745" cy="222" r="5" fill="#E8732A" filter="url(#gcity)"/>
+        <text x="745" y="190" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Полтава</text>
+        <text x="745" y="208" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Автопарк</text>
+
+        <!-- ВІННИЦЯ -->
+        <circle cx="375" cy="340" r="10" fill="#E8732A" fill-opacity="0.14">
           <animate attributeName="r" values="10;32;10" dur="3.5s" begin=".8s" repeatCount="indefinite"/>
           <animate attributeName="fill-opacity" values="0.14;0;0.14" dur="3.5s" begin=".8s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="310" cy="295" r="8" fill="#E8732A" fill-opacity="0.2"/>
-        <circle cx="310" cy="295" r="5" fill="#E8732A" filter="url(#gcity)"/>
-        <text x="218" y="288" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Вінниця</text>
-        <text x="218" y="306" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Таксі флот</text>
+        <circle cx="375" cy="340" r="8" fill="#E8732A" fill-opacity="0.2"/>
+        <circle cx="375" cy="340" r="5" fill="#E8732A" filter="url(#gcity)"/>
+        <text x="280" y="334" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Вінниця</text>
+        <text x="280" y="352" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Автопарк</text>
 
-        <!-- ── ДНІПРО ── -->
-        <circle cx="700" cy="295" r="10" fill="#E8732A" fill-opacity="0.14">
-          <animate attributeName="r" values="10;32;10" dur="3.1s" begin="1.2s" repeatCount="indefinite"/>
-          <animate attributeName="fill-opacity" values="0.14;0;0.14" dur="3.1s" begin="1.2s" repeatCount="indefinite"/>
+        <!-- ДНІПРО (головний хаб) -->
+        <circle cx="858" cy="325" r="14" fill="#E8732A" fill-opacity="0.14">
+          <animate attributeName="r" values="14;40;14" dur="3.1s" begin="1.2s" repeatCount="indefinite"/>
+          <animate attributeName="fill-opacity" values="0.18;0;0.18" dur="3.1s" begin="1.2s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="700" cy="295" r="8" fill="#E8732A" fill-opacity="0.2"/>
-        <circle cx="700" cy="295" r="5" fill="#E8732A" filter="url(#gcity)"/>
-        <text x="800" y="288" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Дніпро</text>
-        <text x="800" y="306" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Таксі · Автосервіс</text>
+        <circle cx="858" cy="325" r="11" fill="#E8732A" fill-opacity="0.22"/>
+        <circle cx="858" cy="325" r="6" fill="#E8732A" filter="url(#gcity2)"/>
+        <text x="858" y="290" font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">Дніпро</text>
+        <text x="858" y="307" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#E8732A" text-anchor="middle">Автопарк · Автосервіс</text>
+        <text x="858" y="320" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#E8732A" text-anchor="middle">Продаж авто · ДТП Асістант</text>
 
-        <!-- ── КРИВИЙ РІГ ── -->
-        <circle cx="590" cy="390" r="10" fill="#E8732A" fill-opacity="0.14">
+        <!-- КРИВИЙ РІГ -->
+        <circle cx="700" cy="428" r="10" fill="#E8732A" fill-opacity="0.14">
           <animate attributeName="r" values="10;32;10" dur="3.4s" begin=".6s" repeatCount="indefinite"/>
           <animate attributeName="fill-opacity" values="0.14;0;0.14" dur="3.4s" begin=".6s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="590" cy="390" r="8" fill="#E8732A" fill-opacity="0.2"/>
-        <circle cx="590" cy="390" r="5" fill="#E8732A" filter="url(#gcity)"/>
-        <text x="500" y="380" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Кривий Ріг</text>
-        <text x="500" y="398" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Таксі флот</text>
+        <circle cx="700" cy="428" r="8" fill="#E8732A" fill-opacity="0.2"/>
+        <circle cx="700" cy="428" r="5" fill="#E8732A" filter="url(#gcity)"/>
+        <text x="610" y="420" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Кривий Ріг</text>
+        <text x="610" y="438" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Автопарк</text>
 
-        <!-- ── ЗАПОРІЖЖЯ ── -->
-        <circle cx="770" cy="395" r="10" fill="#E8732A" fill-opacity="0.14">
+        <!-- ЗАПОРІЖЖЯ -->
+        <circle cx="960" cy="432" r="10" fill="#E8732A" fill-opacity="0.14">
           <animate attributeName="r" values="10;32;10" dur="3.7s" begin="1.6s" repeatCount="indefinite"/>
           <animate attributeName="fill-opacity" values="0.14;0;0.14" dur="3.7s" begin="1.6s" repeatCount="indefinite"/>
         </circle>
-        <circle cx="770" cy="395" r="8" fill="#E8732A" fill-opacity="0.2"/>
-        <circle cx="770" cy="395" r="5" fill="#E8732A" filter="url(#gcity)"/>
-        <text x="880" y="386" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Запоріжжя</text>
-        <text x="880" y="404" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Таксі флот</text>
+        <circle cx="960" cy="432" r="8" fill="#E8732A" fill-opacity="0.2"/>
+        <circle cx="960" cy="432" r="5" fill="#E8732A" filter="url(#gcity)"/>
+        <text x="1062" y="424" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Запоріжжя</text>
+        <text x="1062" y="442" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#E8732A" text-anchor="middle">Автопарк</text>
 
-        <!-- ── ОДЕСА (незабаром) ── -->
-        <circle cx="435" cy="480" r="8" fill="#888" fill-opacity="0.18"/>
-        <circle cx="435" cy="480" r="5" fill="#aaa" fill-opacity="0.4"/>
-        <text x="435" y="506" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" fill="#888" text-anchor="middle">Одеса</text>
-        <text x="435" y="522" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#888" text-anchor="middle">Незабаром</text>
+        <!-- ОДЕСА (незабаром) -->
+        <circle cx="548" cy="500" r="7" fill="#888" fill-opacity="0.15"/>
+        <circle cx="548" cy="500" r="4" fill="#aaa" fill-opacity="0.35"/>
+        <text x="548" y="524" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#666" text-anchor="middle">Одеса</text>
+        <text x="548" y="540" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#555" text-anchor="middle">Незабаром</text>
       </svg>
     </div>
 
