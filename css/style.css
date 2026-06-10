@@ -310,7 +310,12 @@ p{color:var(--t2);line-height:1.75}
   align-items:stretch;
 }
 .svc-card{
-  background:var(--col);border:1px solid var(--border);
+  background-color:rgba(22,17,12,0.72);
+  background-image:radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size:14px 14px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.10);
   border-radius:var(--r);padding:20px 16px;
   position:relative;overflow:hidden;
   display:flex;flex-direction:column;
