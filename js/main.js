@@ -72,7 +72,9 @@ if (ham && mobNav) {
 // ── ACTIVE NAV LINK ──
 const cur = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-link, .mob-nav-link').forEach(a => {
-  const h = a.getAttribute('href').split('/').pop();
+  const href = a.getAttribute('href');
+  if (!href) return;
+  const h = href.split('/').pop();
   if (h === cur) a.classList.add('active');
 });
 
