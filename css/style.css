@@ -552,11 +552,15 @@ p{color:var(--t2);line-height:1.75}
 }
 .founder-photo{
   width:100%;aspect-ratio:3/4;
-  border-radius:20px;
+  border-radius:0;
   background-size:cover;background-position:center top;
-  background-color:var(--item);
-  border:1px solid var(--border2);
-  box-shadow:0 24px 64px rgba(0,0,0,0.55);
+  background-color:transparent;
+  border:none;
+  box-shadow:none;
+  -webkit-mask-image:radial-gradient(ellipse 88% 88% at 50% 42%, #000 40%, transparent 80%);
+  mask-image:radial-gradient(ellipse 88% 88% at 50% 42%, #000 40%, transparent 80%);
+  mix-blend-mode:luminosity;
+  opacity:.9;
 }
 @media(max-width:1100px){
   .founder-block{grid-template-columns:1fr;gap:48px}
