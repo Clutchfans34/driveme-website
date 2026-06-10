@@ -330,6 +330,37 @@ p{color:var(--t2);line-height:1.75}
 .hb2{bottom:15%;left:-20px}
 .hb3{top:55%;right:-20px}
 
+/* ── HERO INLINE QUOTE ── */
+.hero-quote{
+  display:flex;gap:14px;align-items:stretch;
+  margin:20px 0 24px;
+}
+.hq-bar{
+  width:3px;border-radius:3px;flex-shrink:0;
+  background:linear-gradient(180deg,var(--accent),rgba(232,115,42,0.15));
+}
+.hq-body{flex:1}
+.hq-text{
+  font-size:13px;line-height:1.7;color:var(--t2);
+  font-style:italic;margin-bottom:12px;
+}
+.hq-author{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hq-photo{
+  width:36px;height:36px;border-radius:50%;
+  background-size:cover;background-position:center top;
+  border:1.5px solid var(--accent);flex-shrink:0;
+}
+.hq-name{font-size:13px;font-weight:700;color:var(--text);line-height:1.2}
+.hq-role{font-size:11px;color:var(--t3)}
+.hq-btn{
+  margin-left:auto;
+  font-size:12px;font-weight:600;color:var(--accent);
+  padding:6px 13px;border-radius:8px;
+  border:1px solid var(--accent-brd);background:var(--accent-bg);
+  white-space:nowrap;transition:all var(--tr);
+}
+.hq-btn:hover{background:rgba(232,115,42,0.18);border-color:var(--accent)}
+
 /* ── HERO ABOUT ROW ── */
 .hero-about{
   display:grid;
