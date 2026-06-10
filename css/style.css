@@ -891,6 +891,13 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   color: var(--accent);
   font-style: normal;
 }
+.orb-cd-year {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--t3);
+  letter-spacing: .4px;
+  margin-top: 2px;
+}
 
 /* Info state (shown on node hover) */
 .orb-ci {
