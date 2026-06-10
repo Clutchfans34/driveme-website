@@ -222,6 +222,30 @@ p{color:var(--t2);line-height:1.75}
 .btn-lg{padding:15px 32px;font-size:14.5px}
 .btn-sm{padding:9px 18px;font-size:12.5px}
 
+/* ghost hero buttons — 3 in a row */
+.hero-btns{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btn-ghost-hero{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 18px;border-radius:10px;
+  font-size:13px;font-weight:600;
+  color:var(--accent);
+  border:1px solid var(--accent-brd);
+  background:var(--accent-bg);
+  transition:all var(--tr);
+  white-space:nowrap;cursor:pointer;
+}
+.btn-ghost-hero:hover{
+  background:rgba(232,115,42,0.16);
+  border-color:var(--accent);
+  box-shadow:0 0 16px rgba(232,115,42,0.22);
+  transform:translateY(-1px);
+}
+.btn-ghost-hero svg{opacity:0.75}
+
+/* nav-link--soon: not clickable */
+.nav-link--soon{cursor:default}
+.nav-link--soon:hover{background:none;color:var(--t2)}
+
 /* ── CARDS ── */
 .card{
   background:var(--col);border:1px solid var(--border);
