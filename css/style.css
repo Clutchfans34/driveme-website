@@ -1252,6 +1252,9 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   .nav-links,.nav-phone{display:none}
   .hamburger{display:flex}
   section{padding:64px 0}
+  .hero{min-height:auto;padding-bottom:56px}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-desc{font-size:0.95rem;max-width:100%}
   .services-grid{grid-template-columns:repeat(2,1fr)}
   .team-grid{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
