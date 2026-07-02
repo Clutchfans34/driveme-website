@@ -13,8 +13,12 @@
 .team-hero{
   min-height:92vh;display:flex;align-items:center;
   padding-top:var(--nav-h);position:relative;overflow:hidden;
-  background:linear-gradient(120deg,rgba(23,19,15,0.97) 0%,rgba(23,19,15,0.88) 50%,rgba(23,19,15,0.70) 100%),
-             url('../images/photo_2026-05-23 00.38.06.jpeg') center/cover no-repeat;
+  background:#17130F;
+}
+.team-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 60% 50%,rgba(232,115,42,0.07) 0%,transparent 70%);
+  pointer-events:none;
 }
 .team-hero-inner{
   display:grid;grid-template-columns:1fr 1fr;
@@ -22,62 +26,102 @@
 }
 .team-hero-eyebrow{margin-bottom:24px}
 .team-hero-h{
-  font-size:clamp(2.4rem,4vw,4.2rem);
-  font-weight:900;letter-spacing:-.03em;line-height:1.06;
-  margin-bottom:24px;
+  font-size:clamp(2.6rem,4.2vw,5rem);
+  font-weight:900;letter-spacing:-.03em;line-height:1.0;
+  margin-bottom:28px;
 }
 .team-hero-h span{color:var(--accent)}
 .team-hero-desc{
-  font-size:1.05rem;line-height:1.8;color:var(--t2);
-  margin-bottom:36px;max-width:520px;
+  font-size:1.05rem;line-height:1.85;color:var(--t2);
+  margin-bottom:40px;max-width:520px;
 }
 .team-hero-stats{
-  display:flex;gap:36px;
+  display:flex;gap:40px;
   padding-top:32px;border-top:1px solid var(--border);
 }
 .ths-item{}
-.ths-val{font-size:2rem;font-weight:900;color:var(--accent);letter-spacing:-.03em}
+.ths-val{font-size:2.1rem;font-weight:900;color:var(--accent);letter-spacing:-.03em}
 .ths-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin-top:4px}
 
-/* team photo */
-.team-photo-wrap{position:relative}
-.team-photo{
-  width:100%;aspect-ratio:4/5;
-  border-radius:24px;
-  background-color:var(--item);background-size:cover;background-position:center top;background-repeat:no-repeat;
-  border:1px solid var(--border2);
-  box-shadow:0 32px 80px rgba(0,0,0,0.55);
-  position:relative;overflow:hidden;
-}
-.team-photo-placeholder{
-  width:100%;aspect-ratio:4/5;
-  border-radius:24px;
-  background:var(--item);
-  border:1px dashed rgba(232,115,42,0.3);
+/* ── TEAM VISUAL ── */
+.team-visual{position:relative;display:flex;align-items:center;justify-content:center;height:520px}
+.tv-orbit-wrap{position:relative;width:380px;height:380px;flex-shrink:0}
+
+/* big center ring */
+.tv-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:210px;height:210px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,115,42,0.15) 0%,rgba(232,115,42,0.04) 60%,transparent 100%);
+  border:1px solid rgba(232,115,42,0.25);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:16px;color:var(--t3);font-size:14px;
+  z-index:5;
 }
-.team-photo-badge{
-  position:absolute;bottom:24px;left:24px;right:24px;
-  background:rgba(23,19,15,0.88);backdrop-filter:blur(12px);
-  border:1px solid var(--border2);border-radius:14px;
-  padding:16px 20px;
-  display:flex;align-items:center;gap:14px;
+.tv-center-num{
+  font-size:3.8rem;font-weight:900;letter-spacing:-.04em;
+  background:linear-gradient(135deg,#E8732A,#FFB37A);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;
 }
-.team-photo-badge-dot{
-  width:10px;height:10px;border-radius:50%;
-  background:var(--green);flex-shrink:0;
-  box-shadow:0 0 8px var(--green);
-  animation:blink 2s ease-in-out infinite;
+.tv-center-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-top:4px}
+
+/* pulsing rings */
+.tv-ring{
+  position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(232,115,42,0.12);
+  transform:translate(-50%,-50%);
+}
+.tv-ring-1{width:270px;height:270px;animation:ring-pulse 3s ease-in-out infinite}
+.tv-ring-2{width:340px;height:340px;animation:ring-pulse 3s ease-in-out infinite .8s}
+.tv-ring-3{width:420px;height:420px;animation:ring-pulse 3s ease-in-out infinite 1.6s}
+@keyframes ring-pulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.02)}}
+
+/* floating role badges */
+.tv-badge{
+  position:absolute;
+  background:rgba(31,26,21,0.92);backdrop-filter:blur(12px);
+  border:1px solid var(--border2);border-radius:40px;
+  padding:8px 16px;
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--text);
+  white-space:nowrap;z-index:10;
+  animation:badge-float 4s ease-in-out infinite;
+}
+.tv-badge-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tv-b1{top:2%;left:50%;transform:translateX(-50%);animation-delay:0s}
+.tv-b2{top:22%;right:-4%;animation-delay:.7s}
+.tv-b3{bottom:22%;right:-4%;animation-delay:1.4s}
+.tv-b4{bottom:2%;left:50%;transform:translateX(-50%);animation-delay:2.1s}
+.tv-b5{bottom:22%;left:-4%;animation-delay:2.8s}
+.tv-b6{top:22%;left:-4%;animation-delay:3.5s}
+@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.tv-b1,.tv-b4{animation-name:badge-float-cx}
+@keyframes badge-float-cx{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+
+.tv-dot-accent{background:#E8732A}
+.tv-dot-green{background:var(--green)}
+.tv-dot-blue{background:var(--blue)}
+.tv-dot-yellow{background:var(--yellow)}
+.tv-dot-purple{background:var(--purple)}
+.tv-dot-teal{background:#2AB8A5}
+
+/* grid of people dots */
+.tv-dots-grid{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  display:grid;grid-template-columns:repeat(8,14px);gap:8px;
+  opacity:0.35;
+}
+.tv-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:rgba(232,115,42,0.5);
+}
+.tv-dot:nth-child(3n){background:rgba(232,115,42,0.25)}
+.tv-dot:nth-child(5n){background:rgba(232,115,42,0.7)}
+
+.team-glow{
+  position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,115,42,0.06) 0%,transparent 65%);
+  top:50%;right:-100px;transform:translateY(-50%);pointer-events:none;
 }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
-.team-photo-badge-text{font-size:13px;font-weight:600;color:var(--text)}
-.team-photo-badge-sub{font-size:11px;color:var(--t3);margin-top:2px}
-.team-glow{
-  position:absolute;width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,115,42,0.08) 0%,transparent 65%);
-  top:-100px;right:-200px;pointer-events:none;
-}
 
 /* ── VALUES SECTION ── */
 .values-section{padding:96px 0;border-top:1px solid var(--border)}
@@ -240,21 +284,25 @@
           <div class="label"><div class="label-dot"></div>Наша команда</div>
         </div>
         <h1 class="team-hero-h">
-          Люди, які<br>
-          <span>будують DriveMe</span><br>
-          зсередини
+          Понад <span>100 людей.</span><br>
+          Одна ціль.<br>
+          Одна культура.
         </h1>
         <p class="team-hero-desc">
-          Ми не наймаємо «зовнішніх керівників» — ми вирощуємо їх усередині. Більшість наших менеджерів розпочинали водіями або стажерами. Це не виняток — це наша система.
+          Ми не шукаємо «готових» менеджерів ззовні — ми їх вирощуємо. Від водія до директора філії — це реальний шлях у DriveMe, і таких історій у нас десятки. Люди залишаються, бо тут є сенс рости.
         </p>
         <div class="team-hero-stats">
           <div class="ths-item">
-            <div class="ths-val">6+</div>
-            <div class="ths-lbl">Років команда разом</div>
+            <div class="ths-val">100+</div>
+            <div class="ths-lbl">Людей у групі</div>
           </div>
           <div class="ths-item">
             <div class="ths-val">&lt;5%</div>
             <div class="ths-lbl">Плинність кадрів</div>
+          </div>
+          <div class="ths-item">
+            <div class="ths-val">6+</div>
+            <div class="ths-lbl">Років разом</div>
           </div>
           <div class="ths-item">
             <div class="ths-val">70%</div>
@@ -264,8 +312,22 @@
       </div>
 
       <div class="team-hero-right reveal rev-d2">
-        <div class="team-photo-wrap">
-          <div class="team-photo" style="background-image:url('../images/team-photo.jpg');background-position:center top;"></div>
+        <div class="team-visual">
+          <div class="tv-orbit-wrap">
+            <div class="tv-ring tv-ring-1"></div>
+            <div class="tv-ring tv-ring-2"></div>
+            <div class="tv-ring tv-ring-3"></div>
+            <div class="tv-center">
+              <div class="tv-center-num">100+</div>
+              <div class="tv-center-lbl">Співробітників</div>
+            </div>
+            <div class="tv-badge tv-b1"><span class="tv-badge-dot tv-dot-accent"></span>Керівники філій</div>
+            <div class="tv-badge tv-b2"><span class="tv-badge-dot tv-dot-green"></span>Адміністратори</div>
+            <div class="tv-badge tv-b3"><span class="tv-badge-dot tv-dot-blue"></span>Механіки СТО</div>
+            <div class="tv-badge tv-b4"><span class="tv-badge-dot tv-dot-yellow"></span>Рекрутери</div>
+            <div class="tv-badge tv-b5"><span class="tv-badge-dot tv-dot-purple"></span>Менеджери</div>
+            <div class="tv-badge tv-b6"><span class="tv-badge-dot tv-dot-teal"></span>Водії-партнери</div>
+          </div>
         </div>
       </div>
 
