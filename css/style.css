@@ -333,7 +333,7 @@ p{color:var(--t2);line-height:1.75}
 .hero-h{margin-bottom:20px;font-size:clamp(2rem,3.2vw,3.4rem)}
 .hero-h span{color:var(--accent)}
 .hero-desc{font-size:1.1rem;max-width:440px;margin-bottom:36px;color:var(--t2)}
-.hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
 .hero-stats{
   display:flex;gap:32px;margin-top:40px;
   padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap;
