@@ -123,7 +123,7 @@ document.querySelectorAll('.js-form').forEach(f => {
 
 // ── ORBITAL SYSTEM ──
 const orbData = {
-  fleet:     { label:'Автопарк',    metric:'344+ авто',   color:'#E8732A' },
+  fleet:     { label:'Автопарк',    metric:'7 міст',      color:'#E8732A' },
   sales:     { label:'Продаж авто', metric:'Trade-in',    color:'#5B9FE8' },
   import:    { label:'Імпорт авто', metric:'−40% ціна',  color:'#E8B42A' },
   insurance: { label:'Страхування', metric:'% від факту', color:'#2CC88A' },
