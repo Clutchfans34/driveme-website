@@ -43,84 +43,99 @@
 .ths-val{font-size:2.1rem;font-weight:900;color:var(--accent);letter-spacing:-.03em}
 .ths-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin-top:4px}
 
-/* ── TEAM VISUAL ── */
-.team-visual{position:relative;display:flex;align-items:center;justify-content:center;height:520px}
-.tv-orbit-wrap{position:relative;width:380px;height:380px;flex-shrink:0}
-
-/* big center ring */
-.tv-center{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:210px;height:210px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,115,42,0.15) 0%,rgba(232,115,42,0.04) 60%,transparent 100%);
-  border:1px solid rgba(232,115,42,0.25);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  z-index:5;
+/* ── TEAM VISUAL — photo + floating cards ── */
+.team-visual{
+  position:relative;
+  padding:40px 40px 56px 20px; /* space for overflowing cards */
 }
-.tv-center-num{
-  font-size:3.8rem;font-weight:900;letter-spacing:-.04em;
+.team-visual::before{
+  content:'';position:absolute;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,115,42,0.1) 0%,transparent 65%);
+  top:50%;right:0;transform:translateY(-50%);
+  pointer-events:none;z-index:0;
+}
+.tvp-wrap{
+  position:relative;z-index:1;
+  border-radius:22px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 48px 96px rgba(0,0,0,0.65),0 0 0 1px rgba(232,115,42,0.06);
+  transform:rotate(1.5deg);
+  transition:transform .4s ease;
+}
+.tvp-wrap:hover{transform:rotate(0deg) scale(1.01)}
+.tvp-wrap img{
+  width:100%;display:block;
+  filter:brightness(0.88) contrast(1.05);
+}
+.tvp-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(23,19,15,0.55) 0%,transparent 50%);
+}
+
+/* floating glassmorphism stat cards */
+.tvc{
+  position:absolute;z-index:10;
+  background:rgba(20,16,12,0.80);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  animation:tvc-float 5s ease-in-out infinite;
+}
+@keyframes tvc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* card 1 — top right: 100+ людей */
+.tvc-1{
+  top:-24px;right:-24px;
+  padding:16px 20px;
+  animation-delay:0s;
+}
+.tvc-1-num{
+  font-size:2rem;font-weight:900;letter-spacing:-.04em;
   background:linear-gradient(135deg,#E8732A,#FFB37A);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   line-height:1;
 }
-.tv-center-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-top:4px}
+.tvc-1-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-top:3px}
 
-/* pulsing rings */
-.tv-ring{
-  position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(232,115,42,0.12);
-  transform:translate(-50%,-50%);
+/* card 2 — left middle: плинність */
+.tvc-2{
+  top:50%;left:-32px;transform:translateY(-50%);
+  padding:14px 18px;
+  animation-delay:1.5s;
 }
-.tv-ring-1{width:270px;height:270px;animation:ring-pulse 3s ease-in-out infinite}
-.tv-ring-2{width:340px;height:340px;animation:ring-pulse 3s ease-in-out infinite .8s}
-.tv-ring-3{width:420px;height:420px;animation:ring-pulse 3s ease-in-out infinite 1.6s}
-@keyframes ring-pulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.02)}}
+.tvc-2-val{font-size:1.5rem;font-weight:900;color:var(--green);letter-spacing:-.03em;line-height:1}
+.tvc-2-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-top:3px}
 
-/* floating role badges */
-.tv-badge{
-  position:absolute;
-  background:rgba(31,26,21,0.92);backdrop-filter:blur(12px);
-  border:1px solid var(--border2);border-radius:40px;
-  padding:8px 16px;
-  display:flex;align-items:center;gap:8px;
-  font-size:13px;font-weight:600;color:var(--text);
-  white-space:nowrap;z-index:10;
-  animation:badge-float 4s ease-in-out infinite;
+/* card 3 — bottom: active pulse */
+.tvc-3{
+  bottom:-20px;left:50%;transform:translateX(-50%);
+  padding:12px 20px;
+  display:flex;align-items:center;gap:12px;
+  white-space:nowrap;
+  animation-delay:.8s;
 }
-.tv-badge-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.tv-b1{top:2%;left:50%;transform:translateX(-50%);animation-delay:0s}
-.tv-b2{top:22%;right:-4%;animation-delay:.7s}
-.tv-b3{bottom:22%;right:-4%;animation-delay:1.4s}
-.tv-b4{bottom:2%;left:50%;transform:translateX(-50%);animation-delay:2.1s}
-.tv-b5{bottom:22%;left:-4%;animation-delay:2.8s}
-.tv-b6{top:22%;left:-4%;animation-delay:3.5s}
-@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-.tv-b1,.tv-b4{animation-name:badge-float-cx}
-@keyframes badge-float-cx{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+.tvc-3-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--green);flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(74,222,128,0.2);
+  animation:pulse-green 2s ease-in-out infinite;
+}
+@keyframes pulse-green{0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,0.2)}50%{box-shadow:0 0 0 6px rgba(74,222,128,0.1)}}
+.tvc-3-text{font-size:13px;font-weight:700;color:var(--text)}
+.tvc-3-sub{font-size:11px;color:var(--t3);margin-top:1px}
 
-.tv-dot-accent{background:#E8732A}
-.tv-dot-green{background:var(--green)}
-.tv-dot-blue{background:var(--blue)}
-.tv-dot-yellow{background:var(--yellow)}
-.tv-dot-purple{background:var(--purple)}
-.tv-dot-teal{background:#2AB8A5}
+/* card 4 — bottom right: 70% */
+.tvc-4{
+  bottom:32px;right:-28px;
+  padding:14px 18px;
+  animation-delay:2.4s;
+}
+.tvc-4-val{font-size:1.5rem;font-weight:900;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.tvc-4-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-top:3px}
 
-/* grid of people dots */
-.tv-dots-grid{
-  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
-  display:grid;grid-template-columns:repeat(8,14px);gap:8px;
-  opacity:0.35;
-}
-.tv-dot{
-  width:14px;height:14px;border-radius:50%;
-  background:rgba(232,115,42,0.5);
-}
-.tv-dot:nth-child(3n){background:rgba(232,115,42,0.25)}
-.tv-dot:nth-child(5n){background:rgba(232,115,42,0.7)}
-
-.team-glow{
-  position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,115,42,0.06) 0%,transparent 65%);
-  top:50%;right:-100px;transform:translateY(-50%);pointer-events:none;
-}
+.team-glow{display:none}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 
 /* ── VALUES SECTION ── */
@@ -313,20 +328,37 @@
 
       <div class="team-hero-right reveal rev-d2">
         <div class="team-visual">
-          <div class="tv-orbit-wrap">
-            <div class="tv-ring tv-ring-1"></div>
-            <div class="tv-ring tv-ring-2"></div>
-            <div class="tv-ring tv-ring-3"></div>
-            <div class="tv-center">
-              <div class="tv-center-num">100+</div>
-              <div class="tv-center-lbl">Співробітників</div>
+          <!-- photo -->
+          <div class="tvp-wrap">
+            <img src="../images/team-photo.jpg" alt="Команда DriveMe" loading="eager">
+            <div class="tvp-overlay"></div>
+          </div>
+
+          <!-- card 1: 100+ людей · 7 міст -->
+          <div class="tvc tvc-1">
+            <div class="tvc-1-num">100+</div>
+            <div class="tvc-1-lbl">людей · 7 міст</div>
+          </div>
+
+          <!-- card 2: плинність -->
+          <div class="tvc tvc-2">
+            <div class="tvc-2-val">&lt;5%</div>
+            <div class="tvc-2-lbl">Плинність</div>
+          </div>
+
+          <!-- card 3: active + роки -->
+          <div class="tvc tvc-3">
+            <span class="tvc-3-dot"></span>
+            <div>
+              <div class="tvc-3-text">6+ років разом</div>
+              <div class="tvc-3-sub">Ядро команди з 2018 року</div>
             </div>
-            <div class="tv-badge tv-b1"><span class="tv-badge-dot tv-dot-accent"></span>Керівники філій</div>
-            <div class="tv-badge tv-b2"><span class="tv-badge-dot tv-dot-green"></span>Адміністратори</div>
-            <div class="tv-badge tv-b3"><span class="tv-badge-dot tv-dot-blue"></span>Механіки СТО</div>
-            <div class="tv-badge tv-b4"><span class="tv-badge-dot tv-dot-yellow"></span>Рекрутери</div>
-            <div class="tv-badge tv-b5"><span class="tv-badge-dot tv-dot-purple"></span>Менеджери</div>
-            <div class="tv-badge tv-b6"><span class="tv-badge-dot tv-dot-teal"></span>Водії-партнери</div>
+          </div>
+
+          <!-- card 4: 70% керівників -->
+          <div class="tvc tvc-4">
+            <div class="tvc-4-val">70%</div>
+            <div class="tvc-4-lbl">Керівників — із середини</div>
           </div>
         </div>
       </div>
