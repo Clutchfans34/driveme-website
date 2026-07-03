@@ -213,6 +213,8 @@
   transition:all var(--tr);
 }
 .vac-form-submit:hover{background:#d4651f;transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,115,42,0.35)}
+.vac-field-err{font-size:11px;color:#f87171;margin-top:4px;display:block;min-height:16px}
+.vac-form-group input.err,.vac-form-group select.err,.vac-form-group textarea.err{border-color:#f87171}
 </style>
 </head>
 <body>
@@ -528,43 +530,63 @@
 <!-- ── APPLY MODAL ── -->
 <div class="vac-modal-bg" id="applyModal">
   <div class="vac-modal">
-    <div class="vac-modal-close" onclick="closeModal()">
+    <div class="vac-modal-close" id="modalClose">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </div>
-    <h3>Відгукнутися на вакансію</h3>
-    <div class="vac-modal-pos" id="modalPos">Назва вакансії</div>
-    <div class="vac-form-row">
-      <div class="vac-form-group">
-        <label>Ім'я</label>
-        <input type="text" placeholder="Олексій">
+
+    <!-- FORM STATE -->
+    <div id="formState">
+      <h3>Відгукнутися на вакансію</h3>
+      <div class="vac-modal-pos" id="modalPos">Назва вакансії</div>
+      <div class="vac-form-row">
+        <div class="vac-form-group">
+          <label>Ім'я *</label>
+          <input type="text" id="fName" placeholder="Олексій" autocomplete="given-name">
+          <span class="vac-field-err" id="errName"></span>
+        </div>
+        <div class="vac-form-group">
+          <label>Прізвище *</label>
+          <input type="text" id="fLastName" placeholder="Коваленко" autocomplete="family-name">
+          <span class="vac-field-err" id="errLastName"></span>
+        </div>
       </div>
       <div class="vac-form-group">
-        <label>Прізвище</label>
-        <input type="text" placeholder="Коваленко">
+        <label>Телефон *</label>
+        <input type="tel" id="fPhone" placeholder="+38 (0XX) XXX-XX-XX" autocomplete="tel">
+        <span class="vac-field-err" id="errPhone"></span>
       </div>
+      <div class="vac-form-group">
+        <label>Місто *</label>
+        <select id="fCity">
+          <option value="">Оберіть місто</option>
+          <option>Вінниця</option>
+          <option>Дніпро</option>
+          <option>Кривий Ріг</option>
+          <option>Запоріжжя</option>
+          <option>Полтава</option>
+          <option>Львів</option>
+          <option>Київ</option>
+        </select>
+        <span class="vac-field-err" id="errCity"></span>
+      </div>
+      <div class="vac-form-group">
+        <label>Коротко про себе</label>
+        <textarea id="fAbout" placeholder="Розкажи про свій досвід та чому хочеш приєднатись до DriveMe..." rows="3"></textarea>
+      </div>
+      <button class="vac-form-submit" id="formSubmit">Надіслати заявку</button>
     </div>
-    <div class="vac-form-group">
-      <label>Телефон</label>
-      <input type="tel" placeholder="+38 (0XX) XXX-XX-XX">
+
+    <!-- SUCCESS STATE -->
+    <div id="successState" style="display:none;text-align:center;padding:20px 0">
+      <div style="width:72px;height:72px;border-radius:50%;background:rgba(74,222,128,0.12);border:1px solid rgba(74,222,128,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:var(--green)">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 style="margin-bottom:12px">Заявку надіслано!</h3>
+      <p style="color:var(--t2);font-size:15px;line-height:1.7;margin-bottom:8px">Дякуємо, <strong id="successName" style="color:var(--text)"></strong>!</p>
+      <p style="color:var(--t3);font-size:14px;line-height:1.7;margin-bottom:32px">Ми розглянемо твою заявку на вакансію <strong id="successPos" style="color:var(--accent)"></strong> і зв'яжемося з тобою найближчим часом.</p>
+      <button class="vac-form-submit" id="successClose" style="background:var(--item);border:1px solid var(--border2);color:var(--text)">Закрити</button>
     </div>
-    <div class="vac-form-group">
-      <label>Місто</label>
-      <select>
-        <option value="">Оберіть місто</option>
-        <option>Вінниця</option>
-        <option>Дніпро</option>
-        <option>Кривий Ріг</option>
-        <option>Запоріжжя</option>
-        <option>Полтава</option>
-        <option>Львів</option>
-        <option>Київ</option>
-      </select>
-    </div>
-    <div class="vac-form-group">
-      <label>Коротко про себе</label>
-      <textarea placeholder="Розкажи про свій досвід та чому хочеш приєднатись до DriveMe..."></textarea>
-    </div>
-    <button class="vac-form-submit">Надіслати заявку</button>
+
   </div>
 </div>
 
@@ -579,17 +601,85 @@
 </footer>
 
 <script>
+let _currentPos = '';
+
 function openModal(pos) {
+  _currentPos = pos;
   document.getElementById('modalPos').textContent = pos;
+  document.getElementById('formState').style.display = '';
+  document.getElementById('successState').style.display = 'none';
+  // reset form
+  ['fName','fLastName','fPhone','fCity','fAbout'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.value = ''; el.classList.remove('err'); }
+  });
+  ['errName','errLastName','errPhone','errCity'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '';
+  });
   document.getElementById('applyModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
 function closeModal() {
   document.getElementById('applyModal').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+function setErr(inputId, errId, msg) {
+  const el = document.getElementById(inputId);
+  const err = document.getElementById(errId);
+  el.classList.add('err');
+  err.textContent = msg;
+  return false;
+}
+function clearErr(inputId, errId) {
+  const el = document.getElementById(inputId);
+  const err = document.getElementById(errId);
+  el.classList.remove('err');
+  err.textContent = '';
+}
+
+document.getElementById('formSubmit').addEventListener('click', function() {
+  let valid = true;
+
+  const name = document.getElementById('fName').value.trim();
+  const last = document.getElementById('fLastName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const city = document.getElementById('fCity').value;
+
+  if (!name) { setErr('fName','errName',"Введіть ім'я"); valid = false; }
+  else clearErr('fName','errName');
+
+  if (!last) { setErr('fLastName','errLastName','Введіть прізвище'); valid = false; }
+  else clearErr('fLastName','errLastName');
+
+  if (!phone || phone.replace(/\D/g,'').length < 10) {
+    setErr('fPhone','errPhone','Введіть коректний номер'); valid = false;
+  } else clearErr('fPhone','errPhone');
+
+  if (!city) { setErr('fCity','errCity','Оберіть місто'); valid = false; }
+  else clearErr('fCity','errCity');
+
+  if (!valid) return;
+
+  // show success
+  document.getElementById('successName').textContent = name;
+  document.getElementById('successPos').textContent = _currentPos;
+  document.getElementById('formState').style.display = 'none';
+  document.getElementById('successState').style.display = '';
+});
+
+document.getElementById('successClose').addEventListener('click', closeModal);
+document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('applyModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
+});
+
+// clear errors on input
+['fName','fLastName','fPhone','fCity'].forEach((id, i) => {
+  const errIds = ['errName','errLastName','errPhone','errCity'];
+  document.getElementById(id).addEventListener('input', () => clearErr(id, errIds[i]));
 });
 
 // filter tabs
@@ -599,11 +689,7 @@ document.querySelectorAll('.vac-filter').forEach(btn => {
     this.classList.add('active');
     const f = this.dataset.filter;
     document.querySelectorAll('.vac-section').forEach(sec => {
-      if (f === 'all' || sec.dataset.dept === f) {
-        sec.style.display = '';
-      } else {
-        sec.style.display = 'none';
-      }
+      sec.style.display = (f === 'all' || sec.dataset.dept === f) ? '' : 'none';
     });
   });
 });
