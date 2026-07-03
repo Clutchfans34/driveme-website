@@ -177,8 +177,9 @@
 .vac-modal-bg.open{opacity:1;pointer-events:all}
 .vac-modal{
   background:var(--col);border:1px solid var(--border2);
-  border-radius:24px;padding:48px;width:100%;max-width:520px;
+  border-radius:24px;padding:40px;width:calc(100% - 32px);max-width:520px;
   position:relative;transform:translateY(16px);transition:transform .25s;
+  box-sizing:border-box;max-height:90vh;overflow-y:auto;
 }
 .vac-modal-bg.open .vac-modal{transform:translateY(0)}
 .vac-modal-close{
