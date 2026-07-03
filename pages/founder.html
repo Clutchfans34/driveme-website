@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Роман Маслов — Засновник DRIVE ME Group</title>
+<link rel="stylesheet" href="../css/style.css?v=20250703">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/main.js?v=20250703" defer></script>
+<style>
+
+/* ── FOUNDER HERO ── */
+.founder-hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:var(--nav-h);position:relative;overflow:hidden;
+  background:#17130F;
+}
+.founder-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 80% at 65% 50%,rgba(232,115,42,0.09) 0%,transparent 65%);
+  pointer-events:none;
+}
+.founder-hero-inner{
+  display:grid;grid-template-columns:1fr 480px;
+  gap:80px;align-items:center;width:100%;
+}
+.founder-eyebrow{margin-bottom:28px}
+.founder-name{
+  font-size:clamp(3rem,5vw,6rem);
+  font-weight:900;letter-spacing:-.04em;line-height:.95;
+  margin-bottom:16px;
+}
+.founder-name em{color:var(--accent);font-style:normal}
+.founder-title{
+  font-size:1.1rem;color:var(--t2);
+  font-weight:500;margin-bottom:40px;
+  letter-spacing:.01em;
+}
+.founder-quote-hero{
+  border-left:3px solid var(--accent);
+  padding-left:24px;
+  margin-bottom:48px;
+  max-width:560px;
+}
+.founder-quote-hero p{
+  font-size:1.15rem;line-height:1.75;
+  color:var(--t2);font-style:italic;
+}
+.founder-hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+.founder-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:30px;
+  background:var(--item);border:1px solid var(--border);
+  font-size:13px;font-weight:600;color:var(--t2);
+}
+.founder-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* photo */
+.founder-photo-wrap{position:relative}
+.founder-photo-img{
+  width:100%;aspect-ratio:3/4;
+  object-fit:cover;object-position:center top;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 48px 96px rgba(0,0,0,0.6);
+  display:block;
+}
+.founder-photo-badge{
+  position:absolute;bottom:28px;left:-32px;
+  background:rgba(20,16,12,0.85);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;padding:16px 20px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+}
+.founder-badge-num{
+  font-size:2rem;font-weight:900;letter-spacing:-.04em;
+  background:linear-gradient(135deg,#E8732A,#FFB37A);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;
+}
+.founder-badge-lbl{font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;font-weight:700;margin-top:4px}
+
+/* ── STORY / TIMELINE ── */
+.story-section{padding:96px 0;border-top:1px solid var(--border)}
+.story-inner{
+  display:grid;grid-template-columns:380px 1fr;
+  gap:80px;align-items:start;
+}
+.story-sticky{position:sticky;top:calc(var(--nav-h) + 32px)}
+.story-sticky h2{margin-bottom:20px}
+.story-sticky p{font-size:1rem;line-height:1.8;color:var(--t2)}
+
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{
+  display:grid;grid-template-columns:80px 1fr;
+  gap:24px;padding-bottom:48px;position:relative;
+}
+.tl-item:not(:last-child) .tl-line{
+  position:absolute;left:39px;top:36px;bottom:0;
+  width:1px;background:var(--border);
+}
+.tl-left{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:4px}
+.tl-year{
+  font-size:13px;font-weight:800;color:var(--accent);
+  letter-spacing:-.01em;text-align:center;
+}
+.tl-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--accent);flex-shrink:0;
+  box-shadow:0 0 0 4px rgba(232,115,42,0.15);
+}
+.tl-right{padding-top:2px}
+.tl-right h3{font-size:1.05rem;font-weight:800;margin-bottom:8px;color:var(--text)}
+.tl-right p{font-size:14px;line-height:1.75;color:var(--t2)}
+
+/* ── PRINCIPLES ── */
+.principles-section{padding:96px 0;border-top:1px solid var(--border)}
+.principles-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:20px;margin-top:56px;
+}
+.pr-card{
+  background:var(--col);border:1px solid var(--border);
+  border-radius:20px;padding:36px 32px;
+  transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr);
+  position:relative;overflow:hidden;
+}
+.pr-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px 2px 0 0;
+}
+.pr-card-1::before{background:var(--accent)}
+.pr-card-2::before{background:var(--green)}
+.pr-card-3::before{background:var(--blue)}
+.pr-card-4::before{background:var(--purple)}
+.pr-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.35)}
+.pr-num{
+  font-size:3.5rem;font-weight:900;letter-spacing:-.05em;line-height:1;
+  color:rgba(255,255,255,0.06);
+  margin-bottom:20px;
+}
+.pr-title{font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:12px}
+.pr-text{font-size:14.5px;line-height:1.75;color:var(--t2)}
+
+/* ── BIG QUOTES ── */
+.quotes-section{
+  padding:96px 0;
+  background:linear-gradient(135deg,rgba(232,115,42,0.04) 0%,rgba(232,115,42,0.01) 100%);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.quotes-grid{display:flex;flex-direction:column;gap:64px;margin-top:64px}
+.bq{display:grid;grid-template-columns:60px 1fr;gap:28px;align-items:start;max-width:860px}
+.bq-mark{
+  font-size:5rem;line-height:.8;font-weight:900;
+  color:var(--accent);opacity:.4;
+  font-family:Georgia,serif;
+}
+.bq-text{
+  font-size:1.35rem;line-height:1.65;
+  color:var(--text);font-weight:500;
+  letter-spacing:-.01em;
+}
+.bq-sub{margin-top:16px;font-size:13px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.6px}
+.bq:nth-child(even){margin-left:auto;text-align:right}
+.bq:nth-child(even) .bq-mark{order:2;text-align:right}
+.bq:nth-child(even) .bq-text{order:1}
+
+/* ── VISION ── */
+.vision-section{padding:96px 0}
+.vision-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.vision-text h2{margin-bottom:24px}
+.vision-text p{font-size:1rem;line-height:1.85;color:var(--t2);margin-bottom:20px}
+.vision-text p:last-child{margin-bottom:0}
+.vision-metrics{display:flex;flex-direction:column;gap:16px}
+.vm-item{
+  background:var(--col);border:1px solid var(--border);
+  border-radius:16px;padding:24px 28px;
+  display:flex;align-items:center;gap:20px;
+  transition:border-color var(--tr),transform var(--tr);
+}
+.vm-item:hover{border-color:var(--border2);transform:translateX(4px)}
+.vm-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--accent-bg);border:1px solid var(--accent-brd);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);flex-shrink:0;
+}
+.vm-val{font-size:1.6rem;font-weight:900;color:var(--text);letter-spacing:-.03em;line-height:1}
+.vm-lbl{font-size:12px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin-top:3px}
+
+/* ── CONTACT CTA ── */
+.founder-cta{
+  padding:96px 0;
+  border-top:1px solid var(--border);
+}
+.founder-cta-inner{max-width:640px;margin:0 auto;text-align:center}
+.founder-cta-inner h2{margin-bottom:16px}
+.founder-cta-inner p{font-size:16px;line-height:1.8;color:var(--t2);margin-bottom:40px}
+.founder-cta-btns{display:flex;align-items:center;justify-content:center;gap:14px}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <span class="nav-logo-name">Drive<em>Me</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><span class="nav-link nav-link--soon">Про нас</span></li>
+      <li><a href="team.html" class="nav-link">Команда</a></li>
+      <li><a href="founder.html" class="nav-link active">Засновник</a></li>
+      <li><a href="vacancies.html" class="nav-link">Вакансії</a></li>
+      <li><span class="nav-link nav-link--soon">Контакти</span></li>
+      <li><span class="nav-link nav-link--invest">Інвесторам</span></li>
+    </ul>
+    <div class="nav-cta"></div>
+    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="founder-hero">
+  <div class="wrap">
+    <div class="founder-hero-inner">
+
+      <div class="reveal">
+        <div class="founder-eyebrow">
+          <div class="label"><div class="label-dot"></div>Засновник та CEO</div>
+        </div>
+        <h1 class="founder-name">Роман<br><em>Маслов</em></h1>
+        <p class="founder-title">Підприємець · Засновник DriveMe Group · Вінниця</p>
+        <div class="founder-quote-hero">
+          <p>«Я будував цей бізнес не з інвесторських грошей, а з власного досвіду та помилок. Кожен напрямок — відповідь на реальну проблему ринку.»</p>
+        </div>
+        <div class="founder-hero-tags">
+          <span class="founder-tag"><span class="founder-tag-dot"></span>6+ років в автобізнесі</span>
+          <span class="founder-tag"><span class="founder-tag-dot" style="background:var(--green)"></span>344+ авто в управлінні</span>
+          <span class="founder-tag"><span class="founder-tag-dot" style="background:var(--blue)"></span>7 міст України</span>
+          <span class="founder-tag"><span class="founder-tag-dot" style="background:var(--purple)"></span>5 напрямків бізнесу</span>
+        </div>
+      </div>
+
+      <div class="founder-photo-wrap reveal rev-d2">
+        <img src="../images/111222.jpeg" alt="Роман Маслов" class="founder-photo-img">
+        <div class="founder-photo-badge">
+          <div class="founder-badge-num">2018</div>
+          <div class="founder-badge-lbl">Рік заснування</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY ── -->
+<section class="story-section">
+  <div class="wrap">
+    <div class="story-inner">
+
+      <div class="story-sticky reveal">
+        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Шлях підприємця</div>
+        <h2>Від ідеї<br>до групи<br>компаній</h2>
+        <p style="margin-top:20px">DriveMe — це не стартап на венчурні гроші. Це бізнес, побудований крок за кроком, з власним капіталом і розумінням ринку зсередини.</p>
+      </div>
+
+      <div class="timeline reveal rev-d1">
+
+        <div class="tl-item">
+          <div class="tl-line"></div>
+          <div class="tl-left">
+            <div class="tl-year">2018</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-right">
+            <h3>Перші авто. Перші водії.</h3>
+            <p>Роман запустив перший невеликий автопарк у Вінниці — кілька автомобілів для роботи на Uklon. Не як франшиза, не як партнерство — власний бізнес з нуля. Головне розуміння: ринок таксі потребує системного підходу, а не просто авто.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-line"></div>
+          <div class="tl-left">
+            <div class="tl-year">2019</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-right">
+            <h3>Масштабування та перша філія</h3>
+            <p>Автопарк виріс до десятків авто. Відкрита перша філія за межами Вінниці. З'явилося розуміння: щоб рости, треба будувати систему — не просто орендувати авто, а керувати людьми, процесами і фінансами.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-line"></div>
+          <div class="tl-left">
+            <div class="tl-year">2021</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-right">
+            <h3>Вертикальна інтеграція — власне СТО</h3>
+            <p>Зрозумівши, що одна з головних статей витрат — ремонт авто, Роман запустив власний автосервіс. Це знизило витрати і дало контроль над якістю. Так з'явилася ідея вертикально інтегрованої автогрупи.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-line"></div>
+          <div class="tl-left">
+            <div class="tl-year">2022</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-right">
+            <h3>Час випробувань. Бізнес не зупиняється.</h3>
+            <p>Повномасштабне вторгнення. Більшість автобізнесів скорочувалися або закривалися. DriveMe продовжив роботу — перегрупував ресурси, підтримав команду і водіїв. Цей рік показав: культура та системність важливіші за сприятливий ринок.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-line"></div>
+          <div class="tl-left">
+            <div class="tl-year">2023</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-right">
+            <h3>Імпорт авто та страхування</h3>
+            <p>Додані нові напрямки: підбір та імпорт авто з Європи, страхові продукти. Кожен напрямок — відповідь на реальний запит клієнтів і ринку. Група компаній набуває повного циклу: від купівлі авто до його утилізації.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left">
+            <div class="tl-year">2024<br>—<br>2025</div>
+            <div class="tl-dot" style="background:var(--green);box-shadow:0 0 0 4px rgba(74,222,128,0.2)"></div>
+          </div>
+          <div class="tl-right">
+            <h3>DriveMe Group. 7 міст. 344+ авто.</h3>
+            <p>Сьогодні DriveMe — повноцінна автомобільна група компаній з присутністю у 7 містах України. Понад 100 людей в команді. Понад 344 авто в управлінні. Продовжуємо будувати — більше міст, більше напрямків, більше людей.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRINCIPLES ── -->
+<section class="principles-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="label"><div class="label-dot"></div>Принципи</div>
+      <h2 style="margin-top:14px">Чим керується<br>Роман у бізнесі</h2>
+    </div>
+    <div class="principles-grid">
+
+      <div class="pr-card pr-card-1 reveal">
+        <div class="pr-num">01</div>
+        <div class="pr-title">Будуй систему, а не залежність від себе</div>
+        <div class="pr-text">Справжній бізнес — той, що працює без постійної присутності власника. Роман з першого дня будує процеси, інструкції та команду так, щоб кожна філія могла функціонувати автономно. Лідер створює лідерів — не замінює їх.</div>
+      </div>
+
+      <div class="pr-card pr-card-2 reveal rev-d1">
+        <div class="pr-num">02</div>
+        <div class="pr-title">Люди важливіші за авто</div>
+        <div class="pr-text">Авто можна купити. Правильну людину на правильній посаді — вирощувати роками. DriveMe — це перш за все компанія людей. Тому низька плинність, внутрішнє зростання і культура зворотного зв'язку — не слова, а щоденна практика.</div>
+      </div>
+
+      <div class="pr-card pr-card-3 reveal">
+        <div class="pr-num">03</div>
+        <div class="pr-title">Проблема ринку — це твоя можливість</div>
+        <div class="pr-text">Кожен напрямок DriveMe народився з реального болю: складно ремонтуватися дешево — відкрили СТО; складно купити авто в Україні — запустили імпорт; водії не мали надійного партнера — створили автопарк. Бізнес-ідея не потрібна, якщо є проблема і рішення.</div>
+      </div>
+
+      <div class="pr-card pr-card-4 reveal rev-d1">
+        <div class="pr-num">04</div>
+        <div class="pr-title">Зростай повільно, але надійно</div>
+        <div class="pr-text">Не венчур, не швидкі гроші — стійке зростання з власного прибутку. Кожна нова філія відкривається тоді, коли є команда, процеси і розуміння ринку. Краще 7 міст з міцною операційкою, ніж 20 міст у хаосі.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── QUOTES ── -->
+<section class="quotes-section">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="label"><div class="label-dot"></div>Пряма мова</div>
+      <h2 style="margin-top:14px">Цитати Романа</h2>
+    </div>
+    <div class="quotes-grid">
+
+      <div class="bq reveal">
+        <div class="bq-mark">"</div>
+        <div>
+          <div class="bq-text">Я ніколи не шукав інвесторів. Мені важливо, щоб бізнес будувався на реальній цінності, а не на обіцянках. Якщо не можеш пояснити, як заробляєш гроші — ти ще не готовий масштабуватися.</div>
+          <div class="bq-sub">Про підхід до бізнесу</div>
+        </div>
+      </div>
+
+      <div class="bq reveal rev-d1">
+        <div class="bq-mark">"</div>
+        <div>
+          <div class="bq-text">Найкраще, що я зробив — це не найняв керівника філії ззовні, а виростив його зсередини. Людина, яка пройшла шлях від водія до директора, знає про цей бізнес більше, ніж будь-який MBA.</div>
+          <div class="bq-sub">Про команду та лідерство</div>
+        </div>
+      </div>
+
+      <div class="bq reveal">
+        <div class="bq-mark">"</div>
+        <div>
+          <div class="bq-text">2022 рік навчив мене, що система важливіша за умови. Коли зовні все рухнуло, тримала саме команда і процеси. Ті, хто будував на людях і культурі, — вижили. Решта — ні.</div>
+          <div class="bq-sub">Про стійкість бізнесу</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VISION ── -->
+<section class="vision-section">
+  <div class="wrap">
+    <div class="vision-inner">
+
+      <div class="vision-text reveal">
+        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Бачення</div>
+        <h2>Що будуємо<br>далі</h2>
+        <p style="margin-top:24px">DriveMe — це не кінцева точка, це платформа. Роман бачить групу компаній, яка повністю охоплює життєвий цикл автомобіля: від підбору та купівлі за кордоном — до щоденної експлуатації, обслуговування і продажу.</p>
+        <p>Мета — бути присутніми в кожному великому місті України та стати стандартом якості в автомобільному бізнесі для таксі-операторів і власників авто.</p>
+      </div>
+
+      <div class="vision-metrics reveal rev-d1">
+        <div class="vm-item">
+          <div class="vm-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="vm-val">7 → 20+</div>
+            <div class="vm-lbl">Міст до 2027</div>
+          </div>
+        </div>
+        <div class="vm-item">
+          <div class="vm-icon" style="background:rgba(74,222,128,0.1);border-color:rgba(74,222,128,0.2);color:var(--green)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 .5-1.3L5 6h14l3.5 3.7A2 2 0 0 1 23 11v4a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="vm-val" style="color:var(--green)">1 000+</div>
+            <div class="vm-lbl">Авто в управлінні</div>
+          </div>
+        </div>
+        <div class="vm-item">
+          <div class="vm-icon" style="background:rgba(96,165,250,0.1);border-color:rgba(96,165,250,0.2);color:var(--blue)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="vm-val" style="color:var(--blue)">500+</div>
+            <div class="vm-lbl">Людей у команді</div>
+          </div>
+        </div>
+        <div class="vm-item">
+          <div class="vm-icon" style="background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.2);color:var(--purple)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <div class="vm-val" style="color:var(--purple)">5 → 7</div>
+            <div class="vm-lbl">Напрямків бізнесу</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="founder-cta">
+  <div class="wrap">
+    <div class="founder-cta-inner reveal">
+      <div class="label" style="justify-content:center;margin-bottom:20px"><div class="label-dot"></div>Зв'яжіться</div>
+      <h2>Є питання або пропозиція?</h2>
+      <p>Роман відкритий до партнерства, інвестицій та цікавих проектів у сфері автомобільного бізнесу.</p>
+      <div class="founder-cta-btns">
+        <a href="vacancies.html" class="btn-g btn-lg">Приєднатись до команди</a>
+        <span class="btn-p btn-lg" style="cursor:default;opacity:.7">Написати особисто — незабаром</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo" style="margin-bottom:0"><span class="nav-logo-name">Drive<em>Me</em></span></a>
+      <p class="footer-copy">© 2018–2025 DRIVE ME Group. Всі права захищені.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
