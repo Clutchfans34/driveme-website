@@ -150,22 +150,31 @@
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
 }
-.quotes-grid{display:flex;flex-direction:column;gap:64px;margin-top:64px}
-.bq{display:grid;grid-template-columns:60px 1fr;gap:28px;align-items:start;max-width:860px}
+.quotes-grid{
+  display:flex;flex-direction:row;gap:20px;
+  margin-top:48px;overflow-x:auto;padding-bottom:8px;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.quotes-grid::-webkit-scrollbar{display:none}
+.bq{
+  flex-shrink:0;width:340px;
+  background:var(--col);border:1px solid var(--border);
+  border-radius:20px;padding:32px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:border-color var(--tr),transform var(--tr);
+}
+.bq:hover{border-color:var(--border2);transform:translateY(-4px)}
 .bq-mark{
-  font-size:5rem;line-height:.8;font-weight:900;
-  color:var(--accent);opacity:.4;
-  font-family:Georgia,serif;
+  font-size:3.5rem;line-height:.8;font-weight:900;
+  color:var(--accent);opacity:.5;
+  font-family:Georgia,serif;margin-bottom:16px;
 }
 .bq-text{
-  font-size:1.35rem;line-height:1.65;
+  font-size:1rem;line-height:1.7;
   color:var(--text);font-weight:500;
-  letter-spacing:-.01em;
+  flex:1;
 }
-.bq-sub{margin-top:16px;font-size:13px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.6px}
-.bq:nth-child(even){margin-left:auto;text-align:right}
-.bq:nth-child(even) .bq-mark{order:2;text-align:right}
-.bq:nth-child(even) .bq-text{order:1}
+.bq-sub{margin-top:20px;font-size:11px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.8px;border-top:1px solid var(--border);padding-top:16px}
 
 /* ── VISION ── */
 .vision-section{padding:96px 0}
@@ -388,34 +397,39 @@
 <!-- ── QUOTES ── -->
 <section class="quotes-section">
   <div class="wrap">
-    <div class="sec-head center reveal">
+    <div class="sec-head reveal">
       <div class="label"><div class="label-dot"></div>Пряма мова</div>
-      <h2 style="margin-top:14px">Цитати Романа</h2>
     </div>
     <div class="quotes-grid">
 
       <div class="bq reveal">
         <div class="bq-mark">"</div>
-        <div>
-          <div class="bq-text">Я ніколи не шукав інвесторів. Мені важливо, щоб бізнес будувався на реальній цінності, а не на обіцянках. Якщо не можеш пояснити, як заробляєш гроші — ти ще не готовий масштабуватися.</div>
-          <div class="bq-sub">Про підхід до бізнесу</div>
-        </div>
+        <div class="bq-text">Підприємництво — це про забезпечення себе, а бізнес — про системні підходи до ринку й змін.</div>
+        <div class="bq-sub">Про бізнес</div>
       </div>
 
       <div class="bq reveal rev-d1">
         <div class="bq-mark">"</div>
-        <div>
-          <div class="bq-text">Найкраще, що я зробив — це не найняв керівника філії ззовні, а виростив його зсередини. Людина, яка пройшла шлях від водія до директора, знає про цей бізнес більше, ніж будь-який MBA.</div>
-          <div class="bq-sub">Про команду та лідерство</div>
-        </div>
+        <div class="bq-text">Криза — це не страшно. Криза — це корисно. Вона змушує знаходити нові управлінські рішення.</div>
+        <div class="bq-sub">Про кризи та зростання</div>
       </div>
 
-      <div class="bq reveal">
+      <div class="bq reveal rev-d2">
         <div class="bq-mark">"</div>
-        <div>
-          <div class="bq-text">2022 рік навчив мене, що система важливіша за умови. Коли зовні все рухнуло, тримала саме команда і процеси. Ті, хто будував на людях і культурі, — вижили. Решта — ні.</div>
-          <div class="bq-sub">Про стійкість бізнесу</div>
-        </div>
+        <div class="bq-text">Цінності. Світогляд працівників має збігатися з твоїм. Команда повинна формуватися навколо мети.</div>
+        <div class="bq-sub">Про команду</div>
+      </div>
+
+      <div class="bq reveal rev-d3">
+        <div class="bq-mark">"</div>
+        <div class="bq-text">Спорт показав, що життя — це довга дистанція. Він навчив системності й чесності з собою.</div>
+        <div class="bq-sub">Про драйв і дисципліну</div>
+      </div>
+
+      <div class="bq reveal rev-d4">
+        <div class="bq-mark">"</div>
+        <div class="bq-text">Я будую бізнес орієнтований на швидке зростання, але з міцною системною основою. Без системи — масштаб вбиває.</div>
+        <div class="bq-sub">Про масштабування</div>
       </div>
 
     </div>
