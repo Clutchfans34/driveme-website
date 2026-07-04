@@ -47,26 +47,40 @@ if (nav) {
 const ham = document.querySelector('.hamburger');
 const mobNav = document.querySelector('.mob-nav');
 if (ham && mobNav) {
-  ham.addEventListener('click', () => {
-    const open = mobNav.classList.toggle('open');
-    const spans = ham.querySelectorAll('span');
-    if (open) {
+  // Always force-hide on load, regardless of CSS cache
+  mobNav.style.display = 'none';
+
+  function closeMenu() {
+    mobNav.style.display = 'none';
+    mobNav.classList.remove('open');
+    const s = ham.querySelectorAll('span');
+    s[0].style.transform = s[2].style.transform = '';
+    s[1].style.opacity = '';
+  }
+
+  ham.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = mobNav.style.display === 'flex';
+    if (isOpen) {
+      closeMenu();
+    } else {
+      mobNav.style.display = 'flex';
+      mobNav.classList.add('open');
+      const spans = ham.querySelectorAll('span');
       spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
       spans[1].style.opacity = '0';
       spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-    } else {
-      spans[0].style.transform = spans[1].style.opacity = spans[2].style.transform = '';
-      spans[1].style.opacity = '';
     }
   });
+
   document.addEventListener('click', e => {
     if (!ham.contains(e.target) && !mobNav.contains(e.target)) {
-      mobNav.classList.remove('open');
-      const s = ham.querySelectorAll('span');
-      s[0].style.transform = s[2].style.transform = '';
-      s[1].style.opacity = '';
+      closeMenu();
     }
   });
+
+  // Close when a nav link is clicked
+  mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
 // ── ACTIVE NAV LINK ──

@@ -183,17 +183,10 @@ p{color:var(--t2);line-height:1.75}
   padding:8px 12px 16px;
   flex-direction:column;gap:2px;
   /* hidden by default — visibility approach avoids layout glitches */
-  display:flex;
-  visibility:hidden;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .22s ease, visibility 0s linear .22s;
+  display:none;
 }
 .mob-nav.open{
-  visibility:visible;
-  opacity:1;
-  pointer-events:auto;
-  transition:opacity .22s ease, visibility 0s linear 0s;
+  display:flex;
 }
 .mob-nav-link{
   display:flex;align-items:center;gap:14px;
