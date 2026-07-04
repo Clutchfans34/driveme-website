@@ -10,223 +10,135 @@
 <script src="../js/main.js?v=20260704" defer></script>
 <style>
 
-/* ── ABOUT HERO ── */
-.about-hero{
-  min-height:100vh;display:flex;align-items:center;
-  padding-top:var(--nav-h);position:relative;overflow:hidden;
-  background:#17130F;
+.about-page{
+  padding-top:var(--nav-h);
+  padding-bottom:96px;
+  min-height:100vh;
 }
-.about-hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(232,115,42,0.08) 0%,transparent 65%);
-  pointer-events:none;
-}
-.about-hero-inner{max-width:900px}
-.about-hero-h{
-  font-size:clamp(3rem,6vw,7rem);
-  font-weight:900;letter-spacing:-.04em;line-height:.92;
-  margin-bottom:32px;
-}
-.about-hero-h em{color:var(--accent);font-style:normal}
-.about-hero-sub{
-  font-size:1.2rem;line-height:1.8;color:var(--t2);
-  max-width:680px;margin-bottom:48px;
-}
-.about-stats{display:flex;flex-wrap:wrap;gap:40px}
-.about-stat-val{font-size:2.8rem;font-weight:900;letter-spacing:-.04em;color:var(--text);line-height:1}
-.about-stat-lbl{font-size:13px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-top:4px}
 
-/* ── ORIGIN ── */
-.origin-section{padding:96px 0;border-top:1px solid var(--border)}
-.origin-inner{
-  display:grid;grid-template-columns:1fr 480px;
-  gap:80px;align-items:start;
+.about-box{
+  max-width:860px;
+  margin:0 auto;
+  padding:72px 0;
 }
-.origin-text h2{margin-bottom:24px}
-.origin-text p{font-size:1rem;line-height:1.85;color:var(--t2);margin-bottom:18px}
-.origin-text p:last-child{margin-bottom:0}
-.origin-photo{
-  border-radius:24px;overflow:hidden;
-  border:1px solid rgba(255,255,255,0.07);
-  box-shadow:0 48px 96px rgba(0,0,0,0.55);
-}
-.origin-photo img{width:100%;display:block;filter:brightness(.9) contrast(1.05)}
 
-/* ── DIFFERENTIATOR ── */
-.diff-section{
-  padding:96px 0;
-  background:linear-gradient(135deg,rgba(232,115,42,0.06) 0%,rgba(232,115,42,0.02) 100%);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+/* HERO */
+.about-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:36px;
 }
-.diff-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;
+.about-label-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
 }
-.diff-text h2{margin-bottom:20px}
-.diff-text p{font-size:1rem;line-height:1.85;color:var(--t2);margin-bottom:16px}
-.diff-text p:last-child{margin-bottom:0}
-.diff-highlight{
-  background:var(--col);border:1px solid var(--border2);
-  border-radius:24px;padding:48px;text-align:center;
-  position:relative;overflow:hidden;
+
+.about-h1{
+  font-size:clamp(3.2rem,6.5vw,7.2rem);
+  font-weight:900;letter-spacing:-.04em;line-height:.9;
+  margin-bottom:36px;
 }
-.diff-highlight::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(232,115,42,0.08) 0%,transparent 70%);
-  pointer-events:none;
+.about-h1 em{color:var(--accent);font-style:normal}
+
+.about-lead{
+  font-size:1.2rem;line-height:1.85;color:var(--t2);
+  max-width:680px;margin-bottom:56px;
 }
-.diff-big-num{
-  font-size:4.5rem;font-weight:900;letter-spacing:-.04em;line-height:1;
+
+/* STATS ROW */
+.about-stats{
+  display:flex;flex-wrap:wrap;gap:48px;
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  margin-bottom:72px;
+}
+.about-stat-val{
+  font-size:2.6rem;font-weight:900;letter-spacing:-.04em;
+  color:var(--text);line-height:1;
+}
+.about-stat-lbl{
+  font-size:12px;color:var(--t3);text-transform:uppercase;
+  letter-spacing:.08em;font-weight:600;margin-top:6px;
+}
+
+/* BODY TEXT */
+.about-section{
+  padding:56px 0;
+  border-bottom:1px solid var(--border);
+}
+.about-section:last-of-type{border-bottom:none}
+
+.about-section-title{
+  font-size:1.8rem;font-weight:900;letter-spacing:-.03em;
+  color:var(--text);margin-bottom:24px;line-height:1.15;
+}
+.about-section-title em{color:var(--accent);font-style:normal}
+
+.about-p{
+  font-size:1rem;line-height:1.9;color:var(--t2);
+  margin-bottom:18px;
+}
+.about-p:last-child{margin-bottom:0}
+
+/* BIG NUMBER INLINE */
+.about-big-num{
+  font-size:clamp(3rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;
   background:linear-gradient(135deg,#E8732A,#FFB37A);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:8px;position:relative;
+  line-height:1;display:block;margin:32px 0 8px;
 }
-.diff-big-lbl{font-size:14px;color:var(--t2);font-weight:600;position:relative}
-.diff-big-sub{font-size:12px;color:var(--t3);margin-top:6px;position:relative}
-
-/* ── DIRECTIONS ── */
-.dir-section{padding:96px 0;border-top:1px solid var(--border)}
-.dir-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:20px;margin-top:56px;
-}
-.dir-card{
-  background:var(--col);border:1px solid var(--border);
-  border-radius:20px;padding:36px 32px;
-  transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr);
-  position:relative;overflow:hidden;
-}
-.dir-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px 2px 0 0;
-}
-.dir-card-1::before{background:var(--accent)}
-.dir-card-2::before{background:var(--blue)}
-.dir-card-3::before{background:var(--green)}
-.dir-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.35)}
-.dir-icon{
-  width:48px;height:48px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:24px;
-}
-.dir-card-1 .dir-icon{background:var(--accent-bg);border:1px solid var(--accent-brd);color:var(--accent)}
-.dir-card-2 .dir-icon{background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.2);color:var(--blue)}
-.dir-card-3 .dir-icon{background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);color:var(--green)}
-.dir-title{font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:12px}
-.dir-desc{font-size:14px;line-height:1.75;color:var(--t2)}
-
-/* ── TEAM BLOCK ── */
-.team-block{
-  padding:96px 0;
-  border-top:1px solid var(--border);
-}
-.team-block-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;
-}
-.team-block-text h2{margin-bottom:20px}
-.team-block-text p{font-size:1rem;line-height:1.85;color:var(--t2);margin-bottom:16px}
-.team-block-text p:last-child{margin-bottom:0}
-.team-block-stat{
-  font-size:5rem;font-weight:900;letter-spacing:-.05em;
-  background:linear-gradient(135deg,#E8732A,#FFB37A);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  line-height:1;margin-bottom:8px;
-}
-.team-block-stat-lbl{font-size:14px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
-
-/* ── RESILIENCE ── */
-.resilience-section{
-  padding:96px 0;
-  background:linear-gradient(135deg,#0D0A07 0%,#17130F 100%);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-}
-.resilience-inner{max-width:820px}
-.resilience-h{
-  font-size:clamp(2rem,4vw,3.5rem);
-  font-weight:900;letter-spacing:-.03em;line-height:1.1;
-  margin-bottom:32px;
-}
-.resilience-h em{color:var(--accent);font-style:normal}
-.resilience-p{font-size:1.1rem;line-height:1.85;color:var(--t2);margin-bottom:20px}
-.resilience-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:12px 24px;border-radius:30px;
-  background:var(--accent-bg);border:1px solid var(--accent-brd);
-  font-size:14px;font-weight:700;color:var(--accent);
-  margin-top:16px;
+.about-big-lbl{
+  font-size:13px;color:var(--t3);text-transform:uppercase;
+  letter-spacing:.08em;font-weight:600;margin-bottom:28px;
 }
 
-/* ── TECH ── */
-.tech-section{padding:96px 0;border-top:1px solid var(--border)}
-.tech-inner{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:center;
+/* DIRECTIONS LIST */
+.about-dir-list{
+  display:flex;flex-direction:column;gap:0;
+  margin:32px 0 0;
 }
-.tech-text h2{margin-bottom:20px}
-.tech-text p{font-size:1rem;line-height:1.85;color:var(--t2);margin-bottom:16px}
-.tech-text p:last-child{margin-bottom:0}
-.tech-items{display:flex;flex-direction:column;gap:16px}
-.tech-item{
-  background:var(--col);border:1px solid var(--border);
-  border-radius:16px;padding:24px;
-  display:flex;align-items:center;gap:20px;
-  transition:border-color var(--tr),transform var(--tr);
+.about-dir-item{
+  padding:24px 0;
+  border-bottom:1px solid var(--border);
 }
-.tech-item:hover{border-color:var(--border2);transform:translateX(6px)}
-.tech-item-ico{
-  width:44px;height:44px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
+.about-dir-item:first-child{border-top:1px solid var(--border)}
+.about-dir-name{
+  font-size:1rem;font-weight:800;color:var(--text);margin-bottom:8px;
 }
-.tech-item-lbl{font-size:14px;font-weight:600;color:var(--text)}
-.tech-item-sub{font-size:12px;color:var(--t3);margin-top:2px}
+.about-dir-desc{
+  font-size:.95rem;line-height:1.75;color:var(--t2);
+}
 
-/* ── VISION ── */
-.vision-section{
-  padding:96px 0;
-  background:linear-gradient(135deg,rgba(232,115,42,0.05) 0%,rgba(232,115,42,0.01) 100%);
-  border-top:1px solid var(--border);
+/* VISION NUMS */
+.about-vision-nums{
+  display:flex;flex-wrap:wrap;gap:48px;
+  margin:40px 0;
 }
-.vision-inner{max-width:780px;margin:0 auto;text-align:center}
-.vision-inner h2{margin-bottom:24px}
-.vision-inner p{font-size:1.05rem;line-height:1.85;color:var(--t2);margin-bottom:16px}
-.vision-nums{
-  display:flex;justify-content:center;gap:60px;
-  margin:48px 0;padding:48px;
-  background:var(--col);border:1px solid var(--border2);border-radius:24px;
+.about-vision-val{
+  font-size:3rem;font-weight:900;letter-spacing:-.04em;
+  color:var(--accent);line-height:1;
 }
-.vision-num-val{font-size:3rem;font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1}
-.vision-num-lbl{font-size:12px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-top:6px}
+.about-vision-lbl{
+  font-size:12px;color:var(--t3);text-transform:uppercase;
+  letter-spacing:.08em;font-weight:600;margin-top:6px;
+}
 
-/* ── CITIES ── */
-.cities-section{
-  padding:96px 0;
-  border-top:1px solid var(--border);
-}
-.cities-inner{text-align:center;max-width:700px;margin:0 auto}
-.cities-inner h2{margin-bottom:20px}
-.cities-inner p{font-size:1rem;line-height:1.85;color:var(--t2);margin-bottom:32px}
-.cities-list{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
-  margin-bottom:48px;
-}
-.city-tag{
-  padding:8px 18px;border-radius:30px;
-  background:var(--item);border:1px solid var(--border);
-  font-size:13px;font-weight:600;color:var(--t2);
-}
+/* SLOGAN */
 .about-slogan{
-  font-size:clamp(1.6rem,3vw,2.5rem);
-  font-weight:900;letter-spacing:-.03em;line-height:1.2;
-  margin-bottom:8px;
+  padding-top:56px;text-align:center;
 }
-.about-slogan em{color:var(--accent);font-style:normal}
+.about-slogan-text{
+  font-size:clamp(1.8rem,4vw,3.2rem);
+  font-weight:900;letter-spacing:-.03em;line-height:1.2;
+  color:var(--text);
+}
+.about-slogan-text em{color:var(--accent);font-style:normal}
 
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
@@ -245,249 +157,130 @@
   </div>
 </nav>
 
-<!-- ── HERO ── -->
-<section class="about-hero">
+<!-- MAIN -->
+<main class="about-page">
   <div class="wrap">
-    <div class="about-hero-inner reveal">
-      <div class="label" style="margin-bottom:28px"><div class="label-dot"></div>Про компанію</div>
-      <h1 class="about-hero-h">Ми не просто<br>автопарк.<br><em>Ми — система.</em></h1>
-      <p class="about-hero-sub">DriveMe — це група компаній, яка будує те, чого раніше не існувало на українському ринку: прозору, ефективну і масштабовану систему роботи з автомобілями та водіями.</p>
-      <div class="about-stats">
-        <div>
-          <div class="about-stat-val">2018</div>
-          <div class="about-stat-lbl">Рік заснування</div>
-        </div>
-        <div>
-          <div class="about-stat-val">600+</div>
-          <div class="about-stat-lbl">Водіїв</div>
-        </div>
-        <div>
-          <div class="about-stat-val">7</div>
-          <div class="about-stat-lbl">Міст України</div>
-        </div>
-        <div>
-          <div class="about-stat-val">80+</div>
-          <div class="about-stat-lbl">Людей у команді</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="about-box">
 
-<!-- ── ORIGIN ── -->
-<section class="origin-section">
-  <div class="wrap">
-    <div class="origin-inner">
+      <!-- HERO -->
       <div class="reveal">
-        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Як все починалося</div>
-        <h2>Від одного питання — до національної мережі</h2>
-        <p style="margin-top:24px">Засновник DriveMe Роман Маслов запустив компанію у 2018 році з простим, але амбітним питанням: чому на такому великому ринку немає жодної нормальної компанії?</p>
-        <p>Ринок таксі в Україні завжди був хаотичним. Тисячі незалежних водіїв, сотні дрібних орендодавців, жодних стандартів якості, жодної відповідальності. Кожен сам по собі, кожен виживає як може.</p>
-        <p>Ми вирішили зробити інакше. Замість простої оренди авто — ми побудували модель партнерства. Замість відчуттів — аналітику і метрики. Замість хаосу — систему, яка працює однаково ефективно в Дніпрі, Львові, Запоріжжі та будь-якому іншому місті.</p>
-      </div>
-      <div class="origin-photo reveal rev-d2">
-        <img src="../images/111222.jpeg" alt="Роман Маслов — засновник DriveMe">
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="about-label"><span class="about-label-dot"></span>Про компанію</div>
+        <h1 class="about-h1">Ми не просто<br>автопарк.<br><em>Ми — система.</em></h1>
+        <p class="about-lead">DriveMe — це група компаній, яка будує те, чого раніше не існувало на українському ринку: прозору, ефективну і масштабовану систему роботи з автомобілями та водіями.</p>
 
-<!-- ── DIFFERENTIATOR ── -->
-<section class="diff-section">
-  <div class="wrap">
-    <div class="diff-inner">
-      <div class="reveal">
-        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Чим ми відрізняємося</div>
-        <h2>Ми заробляємо тоді, коли заробляє водій</h2>
-        <p style="margin-top:24px">Більшість автопарків в Україні живуть за простою схемою: здав авто — отримав фіксовану суму. Водій заробив чи ні — не їхня проблема.</p>
-        <p>Наша модель інша. Нам вигідно інвестувати в кожного водія: давати технічно справне авто, ділитися аналітикою, навчати, підтримувати. Результат — водії DriveMe стабільно заробляють більше за ринок.</p>
-      </div>
-      <div class="diff-highlight reveal rev-d2">
-        <div class="diff-big-num">4 400<span style="font-size:2rem">₴</span></div>
-        <div class="diff-big-lbl">Середня каса водія в день</div>
-        <div class="diff-big-sub">після комісії платформи · Дніпро</div>
-        <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border)">
-          <div style="font-size:13px;color:var(--t2);line-height:1.7;position:relative">Це не обіцянка.<br>Це цифра, яку ми підтверджуємо щодня.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── DIRECTIONS ── -->
-<section class="dir-section">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="label"><div class="label-dot"></div>Наші напрямки</div>
-      <h2 style="margin-top:14px">Повний цикл<br>автомобільних послуг</h2>
-    </div>
-    <div class="dir-grid">
-
-      <div class="dir-card dir-card-1 reveal">
-        <div class="dir-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="6" rx="1.5"/><path d="M7 10L9.5 5.5h5L17 10"/><path d="M9.5 10L11 6.5h2L14.5 10"/><path d="M3 12.5H6.5"/><path d="M17.5 12.5H21"/><circle cx="7.5" cy="16" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
-        </div>
-        <div class="dir-title">Автопарк DriveMe</div>
-        <div class="dir-desc">Оренда автомобілів для роботи на платформах Uklon та Bolt. Ми підбираємо водіїв ретельно, забезпечуємо технічно справні авто і даємо все необхідне, щоб заробляти більше — без зайвих клопотів.</div>
-      </div>
-
-      <div class="dir-card dir-card-2 reveal rev-d1">
-        <div class="dir-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        </div>
-        <div class="dir-title">DriveMe Auto</div>
-        <div class="dir-desc">Продаж автомобілів з пробігом для водіїв і не тільки. Ми знаємо кожне авто зсередини — і продаємо лише те, за що готові відповідати.</div>
-      </div>
-
-      <div class="dir-card dir-card-3 reveal rev-d2">
-        <div class="dir-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <div class="dir-title">Автосервіс DriveMe</div>
-        <div class="dir-desc">Власна технічна база для обслуговування та ремонту автомобілів. Якісно, швидко і за справедливою ціною — для водіїв DriveMe та зовнішніх клієнтів.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── TEAM BLOCK ── -->
-<section class="team-block">
-  <div class="wrap">
-    <div class="team-block-inner">
-      <div class="reveal">
-        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Команда</div>
-        <h2>Виросли<br>зсередини</h2>
-        <p style="margin-top:24px">Кожен керівник DriveMe — людина, яка починала з низу і виросла всередині компанії. Жодних топ-менеджерів з красивими резюме, які прийшли ззовні і не знають, як виглядає реальна робота.</p>
-        <p>Наші люди знають кожен процес зсередини. Вони знають, де болить, де можна зробити краще і чому DriveMe — це більше, ніж просто місце роботи.</p>
-        <a href="team.html" class="btn-p" style="margin-top:32px;display:inline-flex">Познайомитися з командою
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-      <div class="reveal rev-d2" style="text-align:center">
-        <div class="team-block-stat">80+</div>
-        <div class="team-block-stat-lbl">Людей у групі компаній</div>
-        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
-          <div style="background:var(--col);border:1px solid var(--border);border-radius:14px;padding:16px 20px;text-align:left">
-            <div style="font-size:13px;font-weight:700;color:var(--text)">Сотні рішень щодня</div>
-            <div style="font-size:12px;color:var(--t3);margin-top:3px">Один стандарт якості</div>
-          </div>
-          <div style="background:var(--col);border:1px solid var(--border);border-radius:14px;padding:16px 20px;text-align:left">
-            <div style="font-size:13px;font-weight:700;color:var(--text)">Ріст із середини</div>
-            <div style="font-size:12px;color:var(--t3);margin-top:3px">Від водія до керівника філії</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── RESILIENCE ── -->
-<section class="resilience-section">
-  <div class="wrap">
-    <div class="resilience-inner reveal">
-      <div class="label" style="margin-bottom:28px"><div class="label-dot"></div>Стійкість</div>
-      <h2 class="resilience-h">Ми не зупинялись<br>навіть тоді, коли<br>ринок <em>зупинявся</em></h2>
-      <p class="resilience-p">COVID, економічні кризи, повномасштабне вторгнення — кожного разу ринок завмирав, багато хто йшов. Ми залишались і рухались вперед.</p>
-      <p class="resilience-p">На другий рік повномасштабної війни ми купували конкурентів, відкривали нові філії і масштабували команду. Не тому що це легко. А тому що ми вірили і продовжуємо вірити в Україну — і в те, що системні компанії потрібні їй більше, ніж будь-коли.</p>
-      <div class="resilience-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        DriveMe — #1 по ефективності серед автопарків України
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── TECH ── -->
-<section class="tech-section">
-  <div class="wrap">
-    <div class="tech-inner">
-      <div class="reveal">
-        <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Технології та дані</div>
-        <h2>Ми керуємо<br>цифрами,<br>не відчуттями</h2>
-        <p style="margin-top:24px">Щодня ми аналізуємо десятки показників по кожній філії: завантаженість парку, касу на автомобіль, динаміку нових водіїв, відсоток авто на СТО.</p>
-        <p>Ми використовуємо штучний інтелект для прогнозування, автоматизації та прийняття рішень. Інструменти, які ще вчора були доступні лише великим корпораціям — сьогодні в нашій щоденній роботі.</p>
-      </div>
-      <div class="tech-items reveal rev-d2">
-        <div class="tech-item">
-          <div class="tech-item-ico" style="background:var(--accent-bg);border:1px solid var(--accent-brd);color:var(--accent)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <div class="about-stats">
+          <div>
+            <div class="about-stat-val">2018</div>
+            <div class="about-stat-lbl">Рік заснування</div>
           </div>
           <div>
-            <div class="tech-item-lbl">Аналітика в реальному часі</div>
-            <div class="tech-item-sub">KPI по кожній філії щодня</div>
-          </div>
-        </div>
-        <div class="tech-item">
-          <div class="tech-item-ico" style="background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.2);color:var(--blue)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <div class="about-stat-val">600+</div>
+            <div class="about-stat-lbl">Водіїв</div>
           </div>
           <div>
-            <div class="tech-item-lbl">AI-прогнозування</div>
-            <div class="tech-item-sub">Автоматизація операційних рішень</div>
-          </div>
-        </div>
-        <div class="tech-item">
-          <div class="tech-item-ico" style="background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.2);color:var(--green)">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div class="about-stat-val">7</div>
+            <div class="about-stat-lbl">Міст України</div>
           </div>
           <div>
-            <div class="tech-item-lbl">Власна IT-інфраструктура</div>
-            <div class="tech-item-sub">Дашборди, звіти, контроль якості</div>
+            <div class="about-stat-val">80+</div>
+            <div class="about-stat-lbl">Людей у команді</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ── VISION ── -->
-<section class="vision-section">
-  <div class="wrap">
-    <div class="vision-inner reveal">
-      <div class="label" style="justify-content:center;margin-bottom:20px"><div class="label-dot"></div>Куди ми рухаємось</div>
-      <h2>Ціль проста<br>і амбітна</h2>
-      <p style="margin-top:24px">DriveMe у кожному великому місті України. Ми будуємо не просто автопарк — ми будуємо першу національну систему пасажирських перевезень, де стандарти якості, прозорість і технології — не виняток, а норма.</p>
-      <div class="vision-nums">
-        <div>
-          <div class="vision-num-val">20+</div>
-          <div class="vision-num-lbl">Міст до 2027</div>
-        </div>
-        <div>
-          <div class="vision-num-val" style="color:var(--blue)">500+</div>
-          <div class="vision-num-lbl">Автомобілів</div>
-        </div>
-        <div>
-          <div class="vision-num-val" style="color:var(--green)">1</div>
-          <div class="vision-num-lbl">Єдиний стандарт</div>
+      <!-- ORIGIN -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Від одного питання —<br>до національної мережі</h2>
+        <p class="about-p">DriveMe заснований у 2018 році з простим, але амбітним питанням: чому на такому великому ринку немає жодної нормальної компанії?</p>
+        <p class="about-p">Ринок таксі в Україні завжди був хаотичним. Тисячі незалежних водіїв, сотні дрібних орендодавців, жодних стандартів якості, жодної відповідальності. Кожен сам по собі, кожен виживає як може.</p>
+        <p class="about-p">Ми вирішили зробити інакше. Замість простої оренди авто — ми побудували модель партнерства. Замість відчуттів — аналітику і метрики. Замість хаосу — систему, яка працює однаково ефективно в Дніпрі, Львові, Запоріжжі та будь-якому іншому місті.</p>
+      </div>
+
+      <!-- DIFFERENTIATOR -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Ми заробляємо тоді,<br>коли заробляє водій</h2>
+        <p class="about-p">Більшість автопарків в Україні живуть за простою схемою: здав авто — отримав фіксовану суму. Водій заробив чи ні — не їхня проблема.</p>
+        <p class="about-p">Наша модель інша. Нам вигідно інвестувати в кожного водія: давати технічно справне авто, ділитися аналітикою, навчати, підтримувати. Результат — водії DriveMe стабільно заробляють більше за ринок.</p>
+        <span class="about-big-num">4 400₴</span>
+        <div class="about-big-lbl">Середня каса водія в день після комісії платформи · Дніпро</div>
+        <p class="about-p">Це не обіцянка. Це цифра, яку ми підтверджуємо щодня.</p>
+      </div>
+
+      <!-- DIRECTIONS -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Повний цикл<br>автомобільних послуг</h2>
+        <p class="about-p">DriveMe — це не один продукт. Це три напрямки, які разом закривають весь цикл: від авто до сервісу.</p>
+        <div class="about-dir-list">
+          <div class="about-dir-item">
+            <div class="about-dir-name">Автопарк DriveMe</div>
+            <div class="about-dir-desc">Оренда автомобілів для роботи на платформах Uklon та Bolt. Ми підбираємо водіїв ретельно, забезпечуємо технічно справні авто і даємо все необхідне, щоб заробляти більше — без зайвих клопотів.</div>
+          </div>
+          <div class="about-dir-item">
+            <div class="about-dir-name">DriveMe Auto</div>
+            <div class="about-dir-desc">Продаж автомобілів з пробігом для водіїв і не тільки. Ми знаємо кожне авто зсередини — і продаємо лише те, за що готові відповідати.</div>
+          </div>
+          <div class="about-dir-item">
+            <div class="about-dir-name">Автосервіс DriveMe</div>
+            <div class="about-dir-desc">Власна технічна база для обслуговування та ремонту автомобілів. Якісно, швидко і за справедливою ціною — для водіїв DriveMe та зовнішніх клієнтів.</div>
+          </div>
         </div>
       </div>
-      <p>Це наш наступний крок. І ми вже його робимо.</p>
-    </div>
-  </div>
-</section>
 
-<!-- ── CITIES / FINALE ── -->
-<section class="cities-section">
-  <div class="wrap">
-    <div class="cities-inner reveal">
-      <div class="label" style="justify-content:center;margin-bottom:20px"><div class="label-dot"></div>DriveMe — це про людей</div>
-      <p>За кожним автомобілем стоїть водій. За кожним водієм — сім'я. За кожною поїздкою — довіра пасажира. Ми беремо цю відповідальність серйозно.</p>
-      <div class="cities-list">
-        <span class="city-tag">Дніпро</span>
-        <span class="city-tag">Львів</span>
-        <span class="city-tag">Запоріжжя</span>
-        <span class="city-tag">Кривий Ріг</span>
-        <span class="city-tag">Полтава</span>
-        <span class="city-tag">Вінниця</span>
-        <span class="city-tag">+ вся Україна</span>
+      <!-- TEAM -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Виросли зсередини</h2>
+        <p class="about-p">Кожен керівник DriveMe — людина, яка починала з низу і виросла всередині компанії. Жодних топ-менеджерів з красивими резюме, які прийшли ззовні і не знають, як виглядає реальна робота.</p>
+        <p class="about-p">Наші люди знають кожен процес зсередини. Вони знають, де болить, де можна зробити краще і чому DriveMe — це більше, ніж просто місце роботи.</p>
+        <span class="about-big-num">80+</span>
+        <div class="about-big-lbl">Людей у групі компаній</div>
+        <p class="about-p">Від водія до керівника філії — ріст із середини. Один стандарт якості в кожному рішенні.</p>
       </div>
-      <div class="about-slogan">DriveMe.<br><em>Лідер, що веде до успіху.</em></div>
+
+      <!-- RESILIENCE -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Ми не зупинялись навіть тоді,<br>коли ринок <em>зупинявся</em></h2>
+        <p class="about-p">COVID, економічні кризи, повномасштабне вторгнення — кожного разу ринок завмирав, багато хто йшов. Ми залишались і рухались вперед.</p>
+        <p class="about-p">На другий рік повномасштабної війни ми купували конкурентів, відкривали нові філії і масштабували команду. Не тому що це легко. А тому що ми вірили і продовжуємо вірити в Україну — і в те, що системні компанії потрібні їй більше, ніж будь-коли.</p>
+      </div>
+
+      <!-- TECH -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Ми керуємо цифрами,<br>не відчуттями</h2>
+        <p class="about-p">Щодня ми аналізуємо десятки показників по кожній філії: завантаженість парку, касу на автомобіль, динаміку нових водіїв, відсоток авто на СТО.</p>
+        <p class="about-p">Ми використовуємо штучний інтелект для прогнозування, автоматизації та прийняття рішень. Інструменти, які ще вчора були доступні лише великим корпораціям — сьогодні в нашій щоденній роботі. Аналітика в реальному часі, KPI по кожній філії щодня, власні дашборди і системи контролю якості — це не про майбутнє, це про те, як ми працюємо зараз.</p>
+      </div>
+
+      <!-- VISION -->
+      <div class="about-section reveal">
+        <h2 class="about-section-title">Ціль проста<br>і амбітна</h2>
+        <p class="about-p">DriveMe у кожному великому місті України. Ми будуємо не просто автопарк — ми будуємо першу національну систему пасажирських перевезень, де стандарти якості, прозорість і технології — не виняток, а норма.</p>
+        <div class="about-vision-nums">
+          <div>
+            <div class="about-vision-val">20+</div>
+            <div class="about-vision-lbl">Міст до 2027</div>
+          </div>
+          <div>
+            <div class="about-vision-val">500+</div>
+            <div class="about-vision-lbl">Автомобілів</div>
+          </div>
+          <div>
+            <div class="about-vision-val">7</div>
+            <div class="about-vision-lbl">Міст вже сьогодні</div>
+          </div>
+        </div>
+        <p class="about-p">Дніпро · Львів · Запоріжжя · Кривий Ріг · Полтава · Вінниця · і далі. Це наш наступний крок. І ми вже його робимо.</p>
+      </div>
+
+      <!-- SLOGAN -->
+      <div class="about-slogan reveal">
+        <div class="about-slogan-text">DriveMe.<br><em>Лідер, що веде до успіху.</em></div>
+      </div>
+
     </div>
   </div>
-</section>
+</main>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer-top">
