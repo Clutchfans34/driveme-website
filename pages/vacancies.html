@@ -12,7 +12,7 @@
 /* ── VACANCIES PAGE ── */
 .vac-hero{
   min-height:0;display:flex;align-items:center;
-  padding-top:calc(var(--nav-h) + 48px);padding-bottom:48px;
+  padding-top:calc(var(--nav-h) + 64px);padding-bottom:64px;
   position:relative;overflow:hidden;
   background:#17130F;
 }
@@ -22,13 +22,13 @@
   pointer-events:none;
 }
 .vac-hero-inner{
-  display:grid;grid-template-columns:1fr auto;
-  gap:60px;align-items:center;width:100%;
+  display:grid;grid-template-columns:1fr;
+  gap:0;align-items:center;width:100%;max-width:860px;
 }
 .vac-hero-h{
-  font-size:clamp(2.6rem,4vw,5rem);
-  font-weight:900;letter-spacing:-.03em;line-height:1.0;
-  margin-bottom:24px;
+  font-size:clamp(3rem,5vw,6.5rem);
+  font-weight:900;letter-spacing:-.04em;line-height:.95;
+  margin-bottom:28px;
 }
 .vac-hero-h span{color:var(--accent)}
 .vac-hero-desc{
@@ -247,9 +247,10 @@
     <div class="vac-hero-inner">
       <div class="reveal">
         <div class="label" style="margin-bottom:20px"><div class="label-dot"></div>Кар'єра в DriveMe</div>
-        <h1 class="vac-hero-h">Будуй кар'єру<br>там, де <span>є сенс</span><br>рости</h1>
+        <h1 class="vac-hero-h">Місце, де кар'єра<br>має <span>реальний сенс</span></h1>
         <p class="vac-hero-desc">
-          У DriveMe Group ти не просто займаєш посаду — ти береш участь у побудові бізнесу. Ми даємо реальну відповідальність, прозорий ріст і команду, яка підтримує.
+          У DriveMe Group ти не просто займаєш посаду — ти береш участь у побудові бізнесу, який реально росте. Ми даємо реальну відповідальність, прозорий ріст і команду, яка підтримує на кожному етапі.<br><br>
+          Тут не чекають роками на підвищення — тут його заробляють. Ми цінуємо ініціативу, результат і людей, які хочуть більше.
         </p>
         <div class="vac-hero-badges">
           <div class="vac-hero-badge">
@@ -269,11 +270,6 @@
             Офіційне оформлення
           </div>
         </div>
-      </div>
-      <div class="vac-open-card reveal rev-d2">
-        <div class="vac-open-num">9</div>
-        <div class="vac-open-lbl">Відкритих вакансій</div>
-        <div class="vac-open-sub">станом на липень 2025</div>
       </div>
     </div>
   </div>
