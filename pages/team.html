@@ -266,6 +266,19 @@
 .join-inner h2{margin-bottom:20px}
 .join-inner p{font-size:16px;line-height:1.8;color:var(--t2);margin-bottom:40px}
 .join-btns{display:flex;align-items:center;justify-content:center;gap:14px}
+
+@media(max-width:768px){
+  .team-hero-inner{grid-template-columns:1fr;gap:24px}
+  .team-visual{display:none}
+  .team-hero-h{font-size:clamp(2rem,8vw,3rem)}
+  .team-hero-stats{gap:20px;flex-wrap:wrap}
+  .values-grid{grid-template-columns:1fr}
+  .career-inner{grid-template-columns:1fr;gap:32px}
+  .career-right{order:-1}
+  .team-members-grid{grid-template-columns:1fr!important}
+  .leader-card{grid-template-columns:1fr!important;text-align:center}
+  .leader-photo{width:100%;height:200px;object-fit:cover;border-radius:16px}
+}
 </style>
 </head>
 <body>

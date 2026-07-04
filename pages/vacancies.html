@@ -218,6 +218,15 @@
 .vac-form-submit:hover{background:#d4651f;transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,115,42,0.35)}
 .vac-field-err{font-size:11px;color:#f87171;margin-top:4px;display:block;min-height:16px}
 .vac-form-group input.err,.vac-form-group select.err,.vac-form-group textarea.err{border-color:#f87171}
+
+@media(max-width:768px){
+  .vac-hero{padding-top:calc(var(--nav-h) + 24px);padding-bottom:24px}
+  .vac-hero-h{font-size:clamp(1.8rem,7vw,2.6rem)!important;margin-bottom:12px!important}
+  .vac-grid{grid-template-columns:1fr}
+  .vac-card{padding:22px 18px}
+  .vac-form-row{grid-template-columns:1fr}
+  .vac-modal{width:calc(100vw - 16px)!important;padding:20px 16px!important;max-height:92vh}
+}
 </style>
 </head>
 <body>

@@ -175,27 +175,41 @@ p{color:var(--t2);line-height:1.75}
 
 /* mobile nav */
 .mob-nav{
-  display:none;position:fixed;
+  position:fixed;
   top:var(--nav-h);left:0;right:0;z-index:199;
-  background:rgba(23,19,15,0.98);
+  background:rgba(20,16,12,0.99);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
-  padding:12px 16px 20px;
+  padding:8px 12px 16px;
   flex-direction:column;gap:2px;
+  /* hidden by default */
+  display:flex;
+  transform:translateY(-110%);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .28s cubic-bezier(.4,0,.2,1),opacity .22s ease;
 }
-.mob-nav.open{display:flex}
+.mob-nav.open{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
 .mob-nav-link{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 14px;border-radius:10px;
-  font-size:14px;font-weight:500;color:var(--t2);
-  transition:all var(--tr);
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;border-radius:12px;
+  font-size:15px;font-weight:600;color:var(--t2);
+  text-decoration:none;
+  transition:background var(--tr),color var(--tr);
 }
-.mob-nav-link:hover{background:var(--item);color:var(--text)}
-.mob-nav-ico{color:var(--accent)}
+.mob-nav-link:hover,.mob-nav-link:active{background:var(--item);color:var(--text)}
+.mob-nav-link.active{color:var(--text);background:var(--item)}
+.mob-nav-ico{color:var(--accent);flex-shrink:0;display:flex}
 .mob-nav-link--invest{
   color:#fff !important;font-weight:700;
   background:linear-gradient(135deg,#E8732A,#c85c18);
-  margin-top:6px;border-radius:10px;
-  box-shadow:0 0 18px rgba(232,115,42,0.40);
+  margin-top:6px;border-radius:12px;
+  box-shadow:0 4px 20px rgba(232,115,42,0.35);
+  cursor:default;
 }
 .mob-nav-link--invest .mob-nav-ico{color:#fff}
 
@@ -1278,4 +1292,101 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   .cta-btns{flex-direction:column;align-items:center}
   .hero-btns{flex-direction:column;width:100%}
   .hero-btns a{width:100%;justify-content:center}
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE ADAPTATION — all inner pages
+   ══════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* wrap padding */
+  .wrap{padding:0 16px}
+
+  /* ── ABOUT PAGE ── */
+  .about-box{padding:40px 0}
+  .about-h1{font-size:clamp(1.6rem,7vw,2.4rem);line-height:1.15;margin-bottom:20px}
+  .about-lead{font-size:1rem;margin-bottom:32px}
+  .about-section{padding:36px 0}
+  .about-section-title{font-size:1.3rem;margin-bottom:16px}
+  .about-p{font-size:.95rem;line-height:1.8;margin-bottom:14px}
+  .about-dir-item{padding:18px 0}
+  .about-slogan{padding-top:36px}
+  .about-slogan-text{font-size:clamp(1.4rem,6vw,2rem)}
+  .about-stats{gap:28px;padding:28px 0;margin-bottom:36px}
+  .about-stat-val{font-size:2rem}
+
+  /* ── FOUNDER PAGE ── */
+  .founder-hero-inner{grid-template-columns:1fr!important;gap:32px}
+  .founder-hero-photo{display:none}
+  .story-inner{grid-template-columns:1fr!important;gap:32px}
+  .story-sticky{position:static}
+  .principles-grid{grid-template-columns:1fr!important}
+  .pr-num{font-size:2.2rem}
+  .quotes-grid{margin-top:28px}
+  .bq{padding:22px 0}
+  .bq-text{font-size:1.1rem}
+  .founder-vision-inner{grid-template-columns:1fr!important;gap:32px}
+  .founder-cta-btns{flex-direction:column;align-items:stretch}
+  .founder-cta-btns a{justify-content:center}
+
+  /* ── TEAM PAGE ── */
+  .team-hero-inner{grid-template-columns:1fr!important;gap:24px}
+  .team-visual{display:none}
+  .values-grid{grid-template-columns:1fr!important}
+  .career-inner{grid-template-columns:1fr!important;gap:32px}
+  .team-members-grid{grid-template-columns:1fr!important}
+  .team-hero-stats{gap:24px;flex-wrap:wrap}
+  .team-glow{display:none}
+
+  /* ── VACANCIES PAGE ── */
+  .vac-hero-inner{grid-template-columns:1fr!important}
+  .vac-hero-h{font-size:clamp(1.8rem,7vw,2.6rem)!important}
+  .vac-grid{grid-template-columns:1fr!important}
+  .vac-form-row{grid-template-columns:1fr!important}
+  .vac-modal{width:calc(100% - 24px)!important;padding:24px 20px!important;max-height:88vh}
+  .vac-modal-footer{flex-direction:column;gap:10px}
+  .vac-modal-footer .btn-p{width:100%;justify-content:center}
+
+  /* ── FLEET PAGE ── */
+  .fleet-stats{flex-wrap:wrap;gap:20px}
+  .fleet-cat-grid{grid-template-columns:1fr!important}
+  /* inline grid in fleet — car cards */
+  [style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:repeat(2,1fr)!important;
+  }
+  [style*="grid-template-columns:repeat(3,1fr)"]{
+    grid-template-columns:1fr!important;
+  }
+  [style*="grid-template-columns:1fr 1fr 1fr"]{
+    grid-template-columns:1fr!important;
+  }
+  [style*="grid-template-columns:2fr 1fr"]{
+    grid-template-columns:1fr!important;
+  }
+  [style*="grid-template-columns:1fr 2fr"]{
+    grid-template-columns:1fr!important;
+  }
+
+  /* ── FOOTER ── */
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center}
+  .footer-col ul{gap:6px}
+  .footer-brand p{max-width:100%}
+}
+
+@media(max-width:480px){
+  /* about */
+  .about-h1{font-size:clamp(1.4rem,8vw,2rem)}
+  .about-section-title{font-size:1.15rem}
+
+  /* fleet car cards 1 col */
+  [style*="grid-template-columns:repeat(4,1fr)"]{
+    grid-template-columns:1fr!important;
+  }
+  [style*="grid-template-columns:repeat(2,1fr)"]{
+    grid-template-columns:1fr!important;
+  }
+
+  /* vacancies hero */
+  .vac-hero-h{font-size:clamp(1.6rem,8vw,2.2rem)!important}
 }
