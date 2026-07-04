@@ -83,6 +83,100 @@ if (ham && mobNav) {
   mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
+// ── INVESTOR MODAL ──
+(function(){
+  const MODAL_ID = 'invest-modal';
+
+  // Build modal once and append to body
+  function buildModal() {
+    if (document.getElementById(MODAL_ID)) return;
+    const m = document.createElement('div');
+    m.id = MODAL_ID;
+    m.innerHTML = `
+<div class="imod-overlay"></div>
+<div class="imod-box">
+  <button class="imod-close" aria-label="Закрити">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="imod-label"><span class="imod-dot"></span>Інвесторам</div>
+  <h2 class="imod-title">Зв'язатися з нами</h2>
+  <p class="imod-sub">Залиште контакти — ми зв'яжемось і розкажемо більше про можливості співпраці з DriveMe Group.</p>
+  <form class="imod-form" id="invest-form">
+    <div class="imod-field">
+      <input type="text" name="name" placeholder="Ваше ім'я" required autocomplete="name">
+    </div>
+    <div class="imod-field">
+      <input type="tel" name="phone" placeholder="Телефон" required autocomplete="tel">
+    </div>
+    <div class="imod-field">
+      <input type="email" name="email" placeholder="Email (необов'язково)" autocomplete="email">
+    </div>
+    <div class="imod-field">
+      <textarea name="message" placeholder="Коротко про себе або запит" rows="3"></textarea>
+    </div>
+    <button type="submit" class="imod-submit">
+      Надіслати запит
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </form>
+  <div class="imod-success" style="display:none">
+    <div class="imod-success-ico">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="imod-success-text">Дякуємо! Ми зв'яжемось з вами найближчим часом.</div>
+  </div>
+</div>`;
+    document.body.appendChild(m);
+
+    // Close handlers
+    function close() { m.classList.remove('open'); document.body.style.overflow = ''; }
+    m.querySelector('.imod-overlay').addEventListener('click', close);
+    m.querySelector('.imod-close').addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+    // Form submit
+    m.querySelector('#invest-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      m.querySelector('.imod-success').style.display = 'flex';
+      setTimeout(close, 3000);
+    });
+  }
+
+  function openModal() {
+    buildModal();
+    const m = document.getElementById(MODAL_ID);
+    m.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // reset form if shown again
+    const form = m.querySelector('#invest-form');
+    const succ = m.querySelector('.imod-success');
+    if (form) form.style.display = '';
+    if (succ) succ.style.display = 'none';
+    if (form) form.reset();
+  }
+
+  // Wire up all invest buttons after DOM ready
+  function wireButtons() {
+    document.querySelectorAll('.mob-nav-link--invest, .nav-link--invest, [data-invest]').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        // close mobile menu if open
+        const mn = document.querySelector('.mob-nav');
+        if (mn) { mn.style.display = 'none'; mn.classList.remove('open'); }
+        openModal();
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wireButtons);
+  } else {
+    wireButtons();
+  }
+})();
+
 // ── ACTIVE NAV LINK ──
 const cur = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-link, .mob-nav-link').forEach(a => {
