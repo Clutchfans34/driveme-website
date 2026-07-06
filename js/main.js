@@ -170,6 +170,9 @@ if (ham && mobNav) {
     });
   }
 
+  // Expose globally so onclick="openInvestModal()" works
+  window.openInvestModal = openModal;
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', wireButtons);
   } else {
