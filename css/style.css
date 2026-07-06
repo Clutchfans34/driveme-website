@@ -113,6 +113,11 @@ p{color:var(--t2);line-height:1.75}
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 4px 12px rgba(232,115,42,.35);
 }
+.nav-logo-img{
+  width:40px;height:40px;border-radius:10px;
+  display:block;flex-shrink:0;overflow:hidden;
+  object-fit:cover;
+}
 .nav-logo-name{
   font-size:32px;font-weight:900;letter-spacing:-.02em;
   color:var(--text);
