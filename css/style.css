@@ -1374,8 +1374,8 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
 }
 .imod-success-text{font-size:1rem;font-weight:600;color:var(--text);line-height:1.6}
 
-  /* mob-team-photo hidden on desktop */
-  .mob-team-photo{display:none}
+/* mob-team-photo: hidden everywhere except mobile */
+.mob-team-photo{display:none}
 
   /* ── ABOUT PAGE ── */
   .about-box{padding:40px 0}
