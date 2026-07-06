@@ -144,6 +144,8 @@ p{color:var(--t2);line-height:1.75}
   margin-left:6px;
   box-shadow:0 0 14px rgba(232,115,42,0.45), 0 0 28px rgba(232,115,42,0.20);
   animation:invest-pulse 2.4s ease-in-out infinite;
+  cursor:pointer;
+  user-select:none;
 }
 .nav-link--invest:hover{
   background:linear-gradient(135deg,#F5894A,#E8732A) !important;
