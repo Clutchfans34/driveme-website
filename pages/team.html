@@ -552,5 +552,54 @@
   </div>
 </footer>
 
+
+<!-- INVEST-MODAL -->
+<div id="invest-modal">
+<div class="imod-overlay" onclick="_iClose()"></div>
+<div class="imod-box">
+  <button class="imod-close" onclick="_iClose()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="imod-label"><span class="imod-dot"></span>&#1030;&#1085;&#1074;&#1077;&#1089;&#1090;&#1086;&#1088;&#1072;&#1084;</div>
+  <h2 class="imod-title">&#1047;&#1074;&#700;&#1103;&#1079;&#1072;&#1090;&#1080;&#1089;&#1103; &#1079; &#1085;&#1072;&#1084;&#1080;</h2>
+  <p class="imod-sub">&#1047;&#1072;&#1083;&#1080;&#1096;&#1090;&#1077; &#1082;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1080; &#8212; &#1084;&#1080; &#1079;&#1074;&#700;&#1103;&#1078;&#1077;&#1084;&#1086;&#1089;&#1100; &#1110; &#1088;&#1086;&#1079;&#1082;&#1072;&#1078;&#1077;&#1084;&#1086; &#1073;&#1110;&#1083;&#1100;&#1096;&#1077; &#1087;&#1088;&#1086; &#1084;&#1086;&#1078;&#1083;&#1080;&#1074;&#1086;&#1089;&#1090;&#1110; &#1089;&#1087;&#1110;&#1074;&#1087;&#1088;&#1072;&#1094;&#1110; &#1079; DriveMe Group.</p>
+  <form class="imod-form" id="invest-form" onsubmit="return _iSubmit(this)">
+    <div class="imod-field"><input type="text" name="name" placeholder="&#1042;&#1072;&#1096;&#1077; &#1110;&#1084;&#700;&#1103;" required autocomplete="name"></div>
+    <div class="imod-field"><input type="tel" name="phone" placeholder="&#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;" required autocomplete="tel"></div>
+    <div class="imod-field"><input type="email" name="email" placeholder="Email (&#1085;&#1077;&#1086;&#1073;&#1086;&#1074;&#700;&#1103;&#1079;&#1082;&#1086;&#1074;&#1086;)" autocomplete="email"></div>
+    <div class="imod-field"><textarea name="message" placeholder="&#1050;&#1086;&#1088;&#1086;&#1090;&#1082;&#1086; &#1087;&#1088;&#1086; &#1089;&#1077;&#1073;&#1077; &#1072;&#1073;&#1086; &#1079;&#1072;&#1087;&#1080;&#1090;" rows="3"></textarea></div>
+    <button type="submit" class="imod-submit">&#1053;&#1072;&#1076;&#1110;&#1089;&#1083;&#1072;&#1090;&#1080; &#1079;&#1072;&#1087;&#1080;&#1090; &#8594;</button>
+  </form>
+  <div class="imod-success" id="invest-success" style="display:none">
+    <div class="imod-success-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+    <div class="imod-success-text">&#1044;&#1103;&#1082;&#1091;&#1108;&#1084;&#1086;! &#1052;&#1080; &#1079;&#1074;&#700;&#1103;&#1078;&#1077;&#1084;&#1086;&#1089;&#1100; &#1079; &#1074;&#1072;&#1084;&#1080; &#1085;&#1072;&#1081;&#1073;&#1083;&#1080;&#1078;&#1095;&#1080;&#1084; &#1095;&#1072;&#1089;&#1086;&#1084;.</div>
+  </div>
+</div>
+</div>
+<script>
+function openInvestModal(){
+  var m=document.getElementById('invest-modal');
+  if(!m)return;
+  var mn=document.querySelector('.mob-nav');
+  if(mn){mn.style.display='none';mn.classList.remove('open');}
+  document.getElementById('invest-form').style.display='';
+  document.getElementById('invest-form').reset();
+  document.getElementById('invest-success').style.display='none';
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function _iClose(){
+  var m=document.getElementById('invest-modal');
+  if(m){m.classList.remove('open');}
+  document.body.style.overflow='';
+}
+function _iSubmit(f){
+  f.style.display='none';
+  document.getElementById('invest-success').style.display='flex';
+  setTimeout(_iClose,3000);
+  return false;
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')_iClose();});
+</script>
 </body>
 </html>

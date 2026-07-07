@@ -81,58 +81,6 @@ if (ham && mobNav) {
   mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
-// ── INVESTOR MODAL ──
-var _iModal = null;
-
-function _iClose() {
-  if (_iModal) {
-    _iModal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-function openInvestModal() {
-  if (!_iModal) {
-    _iModal = document.createElement('div');
-    _iModal.id = 'invest-modal';
-    _iModal.innerHTML = '<div class="imod-overlay"></div><div class="imod-box">'
-      + '<button class="imod-close" aria-label="Close">'
-      + '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
-      + '</button>'
-      + '<div class="imod-label"><span class="imod-dot"></span>Інвесторам</div>'
-      + '<h2 class="imod-title">Звʼязатися з нами</h2>'
-      + '<p class="imod-sub">Залиште контакти — ми звʼяжемось і розкажемо більше про можливості співпраці з DriveMe Group.</p>'
-      + '<form class="imod-form" id="invest-form">'
-      + '<div class="imod-field"><input type="text" name="name" placeholder="Ваше імʼя" required autocomplete="name"></div>'
-      + '<div class="imod-field"><input type="tel" name="phone" placeholder="Телефон" required autocomplete="tel"></div>'
-      + '<div class="imod-field"><input type="email" name="email" placeholder="Email (необовʼязково)" autocomplete="email"></div>'
-      + '<div class="imod-field"><textarea name="message" placeholder="Коротко про себе або запит" rows="3"></textarea></div>'
-      + '<button type="submit" class="imod-submit">Надіслати запит →</button>'
-      + '</form>'
-      + '<div class="imod-success" style="display:none">'
-      + '<div class="imod-success-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>'
-      + '<div class="imod-success-text">Дякуємо! Ми звʼяжемось з вами найближчим часом.</div>'
-      + '</div></div>';
-    document.body.appendChild(_iModal);
-    _iModal.querySelector('.imod-overlay').addEventListener('click', _iClose);
-    _iModal.querySelector('.imod-close').addEventListener('click', _iClose);
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') _iClose(); });
-    _iModal.querySelector('#invest-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.style.display = 'none';
-      _iModal.querySelector('.imod-success').style.display = 'flex';
-      setTimeout(_iClose, 3000);
-    });
-  }
-  var form = _iModal.querySelector('#invest-form');
-  var succ = _iModal.querySelector('.imod-success');
-  if (form) { form.style.display = ''; form.reset(); }
-  if (succ) succ.style.display = 'none';
-  var mn = document.querySelector('.mob-nav');
-  if (mn) { mn.style.display = 'none'; mn.classList.remove('open'); }
-  _iModal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
 
 // ── ACTIVE NAV LINK ──
 const cur = location.pathname.split('/').pop() || 'index.html';
