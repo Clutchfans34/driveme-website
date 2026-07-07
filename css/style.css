@@ -1304,37 +1304,39 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   .wrap{padding:0 16px}
 
 /* ── INVESTOR MODAL (native dialog) ── */
+/* Desktop: browser centers dialog by default — we only style it */
 #invest-modal{
   border:none!important;
+  outline:none!important;
   padding:0!important;
   background:#1F1A15!important;
-  color:var(--text)!important;
-  width:100%!important;
-  max-width:480px!important;
-  margin:0!important;
-  position:fixed!important;
-  bottom:0!important;top:auto!important;
-  left:50%!important;right:auto!important;
-  transform:translateX(-50%)!important;
-  border-radius:24px 24px 0 0!important;
-  box-shadow:0 -8px 48px rgba(0,0,0,.6)!important;
+  color:#F0EBE3!important;
+  width:min(480px,94vw)!important;
+  border-radius:24px!important;
+  box-shadow:0 12px 60px rgba(0,0,0,.8)!important;
   overflow:hidden!important;
+  animation:imod-fade .25s ease;
 }
 #invest-modal::backdrop{
-  background:rgba(0,0,0,0.72);
-  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
-@media(min-width:600px){
+/* Mobile: slide up from bottom */
+@media(max-width:599px){
   #invest-modal{
-    bottom:auto!important;top:50%!important;
-    transform:translate(-50%,-50%)!important;
-    border-radius:24px!important;
+    position:fixed!important;
+    bottom:0!important;top:auto!important;
+    left:0!important;right:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    border-radius:24px 24px 0 0!important;
+    margin:0!important;
+    box-shadow:0 -8px 40px rgba(0,0,0,.6)!important;
+    animation:imod-up .3s cubic-bezier(.4,0,.2,1);
   }
 }
 .imod-box{
-  background:transparent;
   padding:32px 24px 40px;
-  width:100%;
 }
 @media(min-width:600px){
   .imod-box{padding:36px 32px 44px}
