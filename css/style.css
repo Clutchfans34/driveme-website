@@ -1303,27 +1303,28 @@ textarea.form-ctrl{resize:vertical;min-height:110px}
   /* wrap padding */
   .wrap{padding:0 16px}
 
-/* ── INVESTOR MODAL ── */
+/* ── INVESTOR MODAL (native dialog) ── */
 #invest-modal{
-  position:fixed;inset:0;z-index:9999;
-  display:none;
+  border:none;padding:0;background:transparent;
+  width:100%;max-width:480px;
+  margin:0 auto;
+  position:fixed;bottom:0;left:50%;top:auto;right:auto;
+  transform:translateX(-50%);
+  overflow:visible;
 }
-#invest-modal.open{display:flex;align-items:flex-end;justify-content:center}
-@media(min-width:600px){
-  #invest-modal.open{align-items:center}
-}
-.imod-overlay{
-  position:absolute;inset:0;
-  background:rgba(0,0,0,0.7);
+#invest-modal::backdrop{
+  background:rgba(0,0,0,0.72);
   backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
 }
+@media(min-width:600px){
+  #invest-modal{bottom:auto;top:50%;transform:translate(-50%,-50%)}
+}
 .imod-box{
-  position:relative;z-index:1;
   background:var(--col);
   border:1px solid var(--border2);
   border-radius:24px 24px 0 0;
   padding:32px 24px 40px;
-  width:100%;max-width:480px;
+  width:100%;
   box-shadow:0 -8px 48px rgba(0,0,0,0.5);
   animation:imod-up .3s cubic-bezier(.4,0,.2,1);
 }
